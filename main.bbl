@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\btxselectlanguage {spanish}
+\bibitem {web:unlp}
+\btxnamefont {\btxlastnamefont
+  {UNLP\textsuperscript{\textregistered}}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Universidad nacional de la plata}{Universidad Nacional de
+  La Plata}}.
+\newblock \url{https://info.unlp.edu.ar/}, 2001-2015.
+\newblock Accedido: 2011.
+
+\end{thebibliography}
