@@ -10,60 +10,71 @@ A level-1 auxiliary file: 2-resumen.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: 3-introduccion.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
-A level-1 auxiliary file: 4-capitulo_2.aux
-Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: 4-capitulo_1.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: 5-capitulo_2.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
-A level-1 auxiliary file: 6-capitulo_3.aux
+A level-1 auxiliary file: 5-capitulo_4.aux
 Reallocating 'name_of_file' (item size: 1) to 17 items.
-A level-1 auxiliary file: 6-capitulo_4.aux
+A level-1 auxiliary file: 6_capitulo_2.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: 7-conclusiones.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: babunsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
+Warning--entry type for "Kratzert2" isn't style-file defined
+--line 145 of file bibliografia.bib
+Warning--entry type for "Rodriguez" isn't style-file defined
+--line 214 of file bibliografia.bib
+Warning--I didn't find a database entry for "modsim2"
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 1 entry,
+Warning--empty language in gutierrez
+Warning--empty journal in gutierrez
+Warning--empty language in ERA5
+Warning--empty journal in modim3
+Warning--empty journal in scikit
+Warning--empty journal in Manu
+Warning--empty journal in NSE
+You've used 22 entries,
             2465 wiz_defined-function locations,
-            598 strings with 5723 characters,
-and the built_in function-call counts, 250 in all, are:
-= -- 17
-> -- 4
+            714 strings with 9055 characters,
+and the built_in function-call counts, 5406 in all, are:
+= -- 341
+> -- 182
 < -- 0
-+ -- 2
-- -- 1
-* -- 17
-:= -- 38
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 72
+- -- 50
+* -- 642
+:= -- 664
+add.period$ -- 41
+call.type$ -- 22
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 11
-empty$ -- 31
-format.name$ -- 2
-if$ -- 51
+cite$ -- 29
+duplicate$ -- 323
+empty$ -- 696
+format.name$ -- 142
+if$ -- 1185
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 21
-num.names$ -- 1
-pop$ -- 10
+int.to.str$ -- 22
+missing$ -- 24
+newline$ -- 103
+num.names$ -- 18
+pop$ -- 146
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3
+skip$ -- 154
 stack$ -- 0
-substring$ -- 0
-swap$ -- 4
+substring$ -- 139
+swap$ -- 135
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 1
-width$ -- 2
-write$ -- 26
+warning$ -- 7
+while$ -- 24
+width$ -- 24
+write$ -- 202
+(There were 10 warnings)

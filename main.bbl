@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
   \providebibliographyfont{name}{}%
   \providebibliographyfont{lastname}{}%
   \providebibliographyfont{title}{\emph}%
@@ -12,6 +12,35 @@
   \providebibliographyfont{numeral}{}%
   \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
 
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {gutierrez}
+\btxnamefont {\btxlastnamefont {Gutierrez}, J.\btxfnamespacelong M.},
+  \btxnamefont {R. \btxlastnamefont {Cano}}, \btxnamefont {A.\btxfnamespacelong
+  S. \btxlastnamefont {Cofino}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {C.\btxfnamespacelong M. \btxlastnamefont {Sordo}}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Redes probabilísticas y neuronales en la
+  ciencias atmosféricas}{Redes Probabilísticas y Neuronales en la Ciencias
+  Atmosféricas}}.
+\newblock 2004.
+
+\bibitem {olah}
+\btxnamefont {\btxlastnamefont {Olah}, C.}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Understanding lstm networks}{Understanding LSTM
+  networks}}.
+\newblock {\latintext
+  \btxurlfont{https://colah.github.io/posts/2015-08-Understanding-LSTMs/}}.
+
+\bibitem {chambo}
+\btxnamefont {\btxlastnamefont {Naranjo~Gaibor}, L.\btxfnamespacelong
+  F.}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {aracterización
+  hidrogeológica de la subcuenca del río chambo. trabajo de grado presentado
+  como requisito parcial para optar el título de ingeniero en geología.
+  carrera de ingeniería en geología}{aracterización hidrogeológica de la
+  Subcuenca del río Chambo. Trabajo de grado presentado como requisito parcial
+  para optar el Título de Ingeniero en Geología. Carrera de Ingeniería en
+  Geología}}.
+\newblock \btxjournalfont {Quito: UCE. 262 p.}, 402, 2013.
+
 \btxselectlanguage {spanish}
 \bibitem {web:unlp}
 \btxnamefont {\btxlastnamefont
@@ -20,5 +49,154 @@
   La Plata}}.
 \newblock \url{https://info.unlp.edu.ar/}, 2001-2015.
 \newblock Accedido: 2011.
+
+\expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+\bibitem {ERA5}
+{\latintext
+  \btxurlfont{https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5}}.
+
+\bibitem {CHELSA}
+{\latintext \btxurlfont{https://chelsa-climate.org/}}.
+
+\bibitem {Molnar}
+\btxnamefont {\btxlastnamefont {Molnar}, Peter} \btxandlong {}\ \btxnamefont
+  {Paolo \btxlastnamefont {Burlando}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Preservation of rainfall properties in stochastic
+  disaggregation by a simple random cascade model}{Preservation of rainfall
+  properties in stochastic disaggregation by a simple random cascade model}}.
+\newblock \btxjournalfont {Atmospheric Research}, 77:137--151,
+  \btxprintmonthyear{.}{09}{2005}{long}.
+
+\bibitem {Estevez}
+\btxnamefont {\btxlastnamefont {Estévez}, Javier}, \btxnamefont {Pedro
+  \btxlastnamefont {Gavilán}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Juan \btxlastnamefont {Giraldez}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Guidelines on validation procedures for meteorological
+  data from automatic weather stations}{Guidelines on validation procedures for
+  meteorological data from automatic weather stations}}.
+\newblock \btxjournalfont {Journal of Hydrology}, 402:144–154,
+  \btxprintmonthyear{.}{05}{2011}{long}.
+
+\bibitem {MAATE}
+{\latintext \btxurlfont{https://www.ambiente.gob.ec/}}.
+
+\bibitem {Rodriguez}
+\btxnamefont {\btxlastnamefont {Rodríguez~Ros}, Javier}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Aportes a la planificación para la gestión
+  integral de los recursos hídricos contribución del comité de la subcuenca
+  del río chambo}{Aportes a la planificación para la gestión integral de los
+  recursos hídricos ContribuCión del Comité de lA SubCuenCA del río
+  ChAmbo}}, \btxprintmonthyear{.}{07}{2015}{long}.
+
+\bibitem {modsim}
+{\latintext \btxurlfont{http://modsim.engr.colostate.edu/}}.
+
+\bibitem {modim3}
+\btxnamefont {\btxlastnamefont {Bertsekas}, Dimitri}, \btxnamefont {Paul
+  \btxlastnamefont {Tseng}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {Massachusetts \btxlastnamefont {Systems}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Relax-iv : a faster version of the relax code for solving
+  minimum cost flow problems}{RELAX-IV : a faster version of the RELAX code for
+  solving minimum cost flow problems}}.
+\newblock \btxprintmonthyear{.}{09}{2022}{long}.
+
+\bibitem {Kratzert}
+\btxnamefont {\btxlastnamefont {Kratzert}, F.}, \btxnamefont {D.
+  \btxlastnamefont {Klotz}}, \btxnamefont {G. \btxlastnamefont {Shalev}},
+  \btxnamefont {G. \btxlastnamefont {Klambauer}}, \btxnamefont {S.
+  \btxlastnamefont {Hochreiter}}\btxandcomma {} \btxandlong {}\ \btxnamefont
+  {G. \btxlastnamefont {Nearing}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Towards learning universal, regional, and local
+  hydrological behaviors via machine learning applied to large-sample
+  datasets}{Towards learning universal, regional, and local hydrological
+  behaviors via machine learning applied to large-sample datasets}}.
+\newblock \btxjournalfont {Hydrology and Earth System Sciences},
+  23(12):5089--5110, 2019.
+\newblock {\latintext
+  \btxurlfont{https://hess.copernicus.org/articles/23/5089/2019/}}.
+
+\bibitem {optim}
+\btxnamefont {\btxlastnamefont {Ruder}, Sebastian}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {An overview of gradient descent optimization
+  algorithms}{An overview of gradient descent optimization algorithms}}, 2016.
+\newblock {\latintext \btxurlfont{https://arxiv.org/abs/1609.04747}}.
+
+\bibitem {adam}
+\btxnamefont {\btxlastnamefont {Kingma}, Diederik\btxfnamespacelong P.}
+  \btxandlong {}\ \btxnamefont {Jimmy \btxlastnamefont {Ba}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Adam: A method for stochastic
+  optimization}{Adam: A Method for Stochastic Optimization}}, 2014.
+
+\bibitem {scikit}
+\btxnamefont {\btxlastnamefont {al.}, Pedregosa~et}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Scikit-learn: Machine learning in
+  python}{Scikit-learn: Machine Learning in Python}}.
+\newblock 2012.
+\newblock {\latintext \btxurlfont{https://arxiv.org/abs/1201.0490}}.
+
+\bibitem {Manu}
+\btxnamefont {\btxlastnamefont {Javier Diez-Sierra}, Manuel\btxfnamespacelong
+  del\btxfnamespacelong Jesus}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {Long-term rainfall prediction using atmospheric synoptic patterns in
+  semiarid climates with statistical and machine learning methods}{Long-term
+  rainfall prediction using atmospheric synoptic patterns in semiarid climates
+  with statistical and machine learning methods}}.
+\newblock 2020.
+
+\bibitem {PCA}
+\btxnamefont {\btxlastnamefont {Abdi}, Hervé} \btxandlong {}\ \btxnamefont
+  {Lynne\btxfnamespacelong J. \btxlastnamefont {Williams}}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Principal component analysis}{Principal
+  component analysis}}.
+\newblock \btxjournalfont {WIREs Computational Statistics}, 2(4):433--459,
+  2010.
+\newblock {\latintext
+  \btxurlfont{https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/wics.101}}.
+
+\bibitem {NSE}
+\btxnamefont {\btxlastnamefont {al.}, D.\btxfnamespacelong N.\btxfnamespacelong
+  Moriasi~et}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase {Model
+  evaluation guidelines for systematic quantification of accuracy in watershed
+  simulations}{Model Evaluation Guidelines for Systematic Quantification of
+  Accuracy in Watershed Simulations}}.
+\newblock 2007.
+
+\bibitem {Kratzert2}
+\btxnamefont {\btxlastnamefont {Kratzert}, Frederik}, \btxnamefont {Daniel
+  \btxlastnamefont {Klotz}}, \btxnamefont {Mathew \btxlastnamefont
+  {Herrnegger}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Sepp
+  \btxlastnamefont {Hochreiter}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {A glimpse into the unobserved: Runoff simulation for
+  ungauged catchments with lstms}{A glimpse into the Unobserved: Runoff
+  simulation for ungauged catchments with LSTMs}},
+  \btxprintmonthyear{.}{12}{2018}{long}.
+
+\bibitem {Mizukami}
+\btxnamefont {\btxlastnamefont {Mizukami}, Naoki}, \btxnamefont {Martyn
+  \btxlastnamefont {Clark}}, \btxnamefont {A. \btxlastnamefont {Newman}},
+  \btxnamefont {A. \btxlastnamefont {Wood}}, \btxnamefont {Ethan
+  \btxlastnamefont {Gutmann}}, \btxnamefont {Bart \btxlastnamefont {Nijssen}},
+  \btxnamefont {Oldrich \btxlastnamefont {Rakovec}}\btxandcomma {} \btxandlong
+  {}\ \btxnamefont {Luis \btxlastnamefont {Samaniego}}\btxauthorcolon\
+  \btxjtitlefont {\btxifchangecase {Toward seamless large domain parameter
+  estimation for hydrologic models}{Toward seamless large domain parameter
+  estimation for hydrologic models}}.
+\newblock \btxjournalfont {Water Resources Research}, 53,
+  \btxprintmonthyear{.}{08}{2017}{long}.
+
+\bibitem {nearing}
+\btxnamefont {\btxlastnamefont {Nearing}, G.\btxfnamespacelong S.},
+  \btxnamefont {F. \btxlastnamefont {Kratzert}}, \btxnamefont
+  {A.\btxfnamespacelong K. \btxlastnamefont {Sampson}}, \btxnamefont
+  {C.\btxfnamespacelong S. \btxlastnamefont {Pelissier}}, \btxnamefont {D.
+  \btxlastnamefont {Klotz}}, \btxnamefont {J.\btxfnamespacelong M.
+  \btxlastnamefont {Frame}}, \btxnamefont {C. \btxlastnamefont
+  {Prieto}}\btxandcomma {} \btxandlong {}\ \btxnamefont {H.\btxfnamespacelong
+  V. \btxlastnamefont {Gupta}}\btxauthorcolon\ \btxjtitlefont {\btxifchangecase
+  {What role does hydrological science play in the age of machine
+  learning?}{What Role Does Hydrological Science Play in the Age of Machine
+  Learning?}}
+\newblock \btxjournalfont {Water Resources Research}, 57(3):e2020WR028091,
+  2021.
 
 \end{thebibliography}
