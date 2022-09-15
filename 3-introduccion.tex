@@ -27,27 +27,221 @@
 % as one of the 23 “Unsolved Problems in Hydrology”: “what are the hydrologic laws at the catchment scale
 % and how do they change with scale?”
 
-\cite{chambo}
-\section{Motivación}
+% --El problema de la hidrología a gran escalas
+\section{Estado del arte}
 
-Motivación de la tesis.
+Un problema de larga data en la hidrología a gran escala es el hecho de que los modelos tradicionales, ya sean agregados o basados 
+en procesos físicos, en general no son extrapolables en el espacio, es decir un modelo calibrado en una cuenca dada no es 
+válido para otra. El desafío principal que deben sortear estos modelos es el de aprender a codificar las diferencias 
+en las características locales para poder extrapolar información hidrológica 
+de un región a otra, por ejemplo de cuencas calibradas a cuencas sin calibrar 
+\cite{Bloschl2} \cite{Razavi} \cite{Hrachowitz} \cite{Bloschl3}.   
 
-Un ejemplo de cita.\cite{web:unlp}
+Una pregunta a responder es si realmente existe una teoría hidrológica válida a macro escalas que englobe la cantidad de 
+procesos heterogéneos que ocurren en una cuenca hidrográfica \cite{nearing}. Más aun, en el artículo textit{Twenty-three Unsolved Problems 
+in Hydrology (UPH)- a community perspective} 
+publicado en el año 2019 \cite{Bloschl} se ha incluido la pregunta de 
+\textit{"¿Cuáles son las leyes hidrológicas válidas en las  escalas de una cuenca hidrográfica?"} 
+entre uno de los 23 problemas sin resolver en la hidrología. La respuesta a esta pregunta probablemente venga de la mano
+los avances de las técnicas de aprendizaje automático y aprendizaje profundo (ML y DP por sus siglas en inglés) que 
+indican que es posible derivar un modelo global a partir de los datos
+observacionales disponibles que funcione en cuencas hidrológicas a gran escala\cite{nearing}. 
+
+
+Éstos modelos derivados de los datos, que carecen de un modelo físico conceptual asociado, no se basan en el conocimiento 
+previo del sistema hidrológico, sino que aprenden los diferentes comportamientos de las cuencas directamente de 
+las entradas meteorológicas y funcionan mejor cuando se entrenan en una gran cantidad de datos proveniente de diferentes cuencas 
+\cite{Gupta}\cite{Peters}. 
+Por el contrario, los modelos tradicionales funcionan mejor cuando se calibran individualmente en cada cuenca y los resultados 
+obtenidos no son transferibles a otras regiones.  
+
+Estudios recientes han demostrado que los modelos
+de DL entrenados en cuencas calibradas predicen mejor en cuencas no calibradas que los modelos tradicionales.
+Kratzert et al. \cite{Kratzert2} demostraron que las redes neuronales que incluyen celdas con memoria a largo plazo 
+(LSTM por sus siglas en inglés) superan la performance del bien conocido modelo de sacramento (SAC-SMA) \cite{sac1} \cite{sac2}
+en una serie de cuencas para las cuales el modelo SAC-SMA había sido calibrado de manera individual.  
+El modelo LSTM fue capaz de realizar mejores predicciones del caudal en dichas cuencas siendo que este nunca antes había visto
+los datos de entrenamiento de estas cuencas. 
+Un estudio más reciente\cite{nearing}\cite{Kratzert}, en donde se han utilizado datos provenientes de varios cientos de cuencas 
+continentales en los Estados Unidos a lo largo de 30 años, demuestra que los modelos de aprendizaje profundo arrojan 
+mejores predicciones para los caudales de descarga en cuencas no aforadas que los obtenidos por modelos tradicionales 
+calibrados con registros de datos en cuencas aforadas. 
+Más aun, estos estudios han demostrado que las redes LSTM son incluso capaces de modelar la presencia de nieve y 
+almacenar esta información en las celdas específicas de memoria sin siquiera haber sido entrenadas directamente en 
+ningún tipo de observación relacionada con nieve más allá de la precipitación total y la temperatura \cite{Kratzert2}.
+A partir de estos resultados, se puede presuponer que este enfoque de desarrollar
+un modelado global es prometedor. 
+
+
+
+
+%En un estudio preliminar Kratzert et al. (2018c) demostraron que su enfoque
+% %           basado en LSTM supera, en promedio, el Modelo de Contabilidad de la Humedad del Suelo de Sacramento 
+% %           (SAC-SMA) bien calibrado en una comparación asimétrica en la que se usó el LSTM en un entorno sin medir
+% %            y SAC-SMA se usó en un configuración calibrada, es decir, SAC-SMA se calibró individualmente para 
+% %            cada cuenca, mientras que el LSTM nunca vio datos de entrenamiento de ninguna cuenca donde se usó 
+% %            para la predicción. Esto se hizo proporcionando al modelo basado en LSTM datos de forzamiento
+% %             meteorológico y atributos de cuenca adicionales. A partir de estos resultados preliminares ya 
+% %             podemos suponer que este enfoque de modelado general es prometedor y tiene potencial para la regionalización.
+
+% --apricion de ML DL
+% Con el avance de la mchine learning y el deep learning indican que se podria dirivar
+% u modelo o teria pra las cuencas a macro escala de los datos observacionales disponibles.
+% Se puede aprende un modelo general con DL. Recientes estudios han demostrado que los modelos de DL entrenados en cuencas calibradas
+% predicen mejor en cuencas no calibradas que modelos tradicionales.
+% DL funciona mejor cuando se entrena en muchas cuencas, pero los modelos tradicionales funcionan mejor cuando se calibran individualmente.
+
+% Los métodos independientes del modelo, por el contrario, no se basan en el conocimiento previo del sistema hidrológico. 
+% En cambio, estos métodos aprenden todo el mapeo desde datos auxiliares y entradas meteorológicas hasta flujos de corriente
+%  u otros flujos de salida directamente. Un modelo de este tipo tiene que "aprender" cómo los atributos de la cuenca u otros
+%   datos auxiliares distinguen entre diferentes comportamientos de respuesta de la cuenca. Sin embargo, el modelado hidrológico
+%    generalmente proporciona las predicciones más precisas cuando un modelo se calibra para una sola cuenca específica
+%     (Mizukami et al., 2017), mientras que los enfoques basados ​​en datos pueden
+
+%beneficiarse de una gran sección 
+%     transversal de diversos datos de entrenamiento, porque el conocimiento puede ser transferido a través de los 
+%     sitios. Entre la categoría de enfoques basados ​​en datos se encuentran las redes neuronales. Besaw et al. (2010)
+%      demostraron que una red neuronal artificial entrenada en una cuenca (usando solo datos meteorológicos) podría
+%       trasladarse a una cuenca similar (durante un período de tiempo similar). Sin embargo, la precisión de su red
+%     %    en la cuenca de entrenamiento fue solo un NSE de 0,29. Recientemente, Kratzert et al. (2018b) han demostrado 
+% %        que las redes de memoria a corto plazo (LSTM), un tipo especial de red neuronal recurrente, son adecuadas
+% %         para la tarea de modelado de lluvia y escorrentía. Este estudio ya incluyó los primeros experimentos
+% %          hacia el modelado regional mientras todavía usaba solo datos meteorológicos e ignoraba los atributos 
+% %          de cuencas auxiliares. En un estudio preliminar Kratzert et al. (2018c) demostraron que su enfoque
+% %           basado en LSTM supera, en promedio, el Modelo de Contabilidad de la Humedad del Suelo de Sacramento 
+% %           (SAC-SMA) bien calibrado en una comparación asimétrica en la que se usó el LSTM en un entorno sin medir
+% %            y SAC-SMA se usó en un configuración calibrada, es decir, SAC-SMA se calibró individualmente para 
+% %            cada cuenca, mientras que el LSTM nunca vio datos de entrenamiento de ninguna cuenca donde se usó 
+% %            para la predicción. Esto se hizo proporcionando al modelo basado en LSTM datos de forzamiento
+% %             meteorológico y atributos de cuenca adicionales. A partir de estos resultados preliminares ya 
+% %             podemos suponer que este enfoque de modelado general es prometedor y tiene potencial para la regionalización.
+
+
+
+% ​en datos.
+
+
+
+% En el año 2019 salió publicado un artículo titulado \textit{Twenty-three Unsolved Problems in Hydrology (UPH)- a community perspective} \cite{Bloschl}
+% en donde la pregunta "\textit{¿Cuáles son las leyes hidrológicas en las macro escalas de una cuenca?}"
+% aparece entre los 23 problemas sin resolver en la hidrología. Hay varias potenciales razones por las cuales aún hoy en día
+% no existe una teoría a macro escalas relevante en hidrología, una de ellas es que tal teoria no existe y que a tales 
+% escalas el comportamiento de las cuencas se encuentra dominado por una cantidad heterogenea de procesos que se traducen 
+% poca consistencia a través de las diferentes cuencas. O tambien prodia ser que sí existen patrones a macro escala pero que carecemos 
+% de informacion suficiente para encontrarlos. 
+
+% ,
+% ya que hoy en día los modelos hidrológicos más exitosos se calibran en una cuenca específica mientras que un modelo 
+% debe ser capaz de describir los procesos que ocurren en grandes extensiones abarcando diferentes sub-cuencas. 
+% El desafío en diferentes modelos es aprender a codificar estas diferencias de manera de poder abarcar las diferencias en las 
+% características locales y describir un comportamiento hidrológico heterogéneo. 
+
+
+% Un problema de larga data en la hidrologia es como usar un modelo o conjunto de modelos para proveer una simulacion hidrologica
+% espacialmente continua atra ves de grandes areas. Este es el problema conocido como el problema del modelado
+% regional. El desafio principal es como extrapolar informacion hidrologica de un area a otra, por ejemplo 
+% cuancas calibradas a cuencas sin calibrar (Blöschl and Sivapalan, 1995). Este problema se encuentra cercananmente relacionado
+% con el problema de prediccion en cuencas sin calibrar.  Razavi and Coulibaly (2013)  Hrachowitz et al. (2013) Prieto et al. (2019).
+
+% Hoy en día los modelos hidrologicos mas exitosos se encuentran calibrados a una cuenca espesifica 
+% mientras que que un modelo debe tener en cuenta los diferentes comportamientos en diferentes cuencas.
+
+% el desafio en diferentes modelos es aprender a codificar estas diferencias de manera de las diferencias en las caracteristicas de las 
+% subcuencas se puedan trasladar en el comportamiento hidrologico eterogeneo.
+
+% hay dos estrategias principales para modelado regional, los metodos que dependen del modelo 
+% y los metodos que se derivan de los datos que no incluyen un modelo especifico.
+
+% \cite{chambo}
+% \section{Motivación}
+% Entrenar un modelo LSTM en la cuenca hidrografica de chambo y ver si es capaz de explicar las caracteristicas locales de cada subcuenca.
+
 
 \section{Objetivos y metodología}
 
-Objetivos y metodología.
+En este trabajo se han desarrollado modelos de redes neuronales (ANNs) capaces de aprender las diferentes características presentes a lo largo
+de las 76 sub-cuencas que conforman la cuenca del río Chambo (CHRC) directamente a partir de datos meteorológicos y predecir los caudales de 
+descarga en cada una de ellas. 
+El objetivo del trabajo es evaluar el desempeño de estos modelos en un entorno calibrado, es decir que no se le pedirá
+a los modelos que predigan en cuencas para las cuales nunca han visto sus datos de entrenamiento, 
+y  determinar si estos modelos, que utilizan datos  meteorológicos, 
+son capaces de combinar diferentes partes de la red para predecir los caudales en diferentes puntos a lo largo de toda la cuenca. 
 
-\section{Resultados obtenidos}
+En la primera parte del trabajo, el propósito fue generar simulaciones hidrológicas para los caudales naturales de las cuencas 
+que fueron utilizados como las variables objetivo para entrenar los modelos de ANNs. Con este fin se ha utilizado el modelo 
+desarrollado por IHCantabria, denominado MELCA (Modelo de Equilibrio Logístico para Cuencas Andinas) descrito en el capítulo \ref{Modelo_Hidrológico} 
+que constituye una adaptación del modelo general del denominado LEM (Modelo de Equilibrio Logístico) para cuencas 
+altas de montaña con presencia de páramos y bofedales. Las series meteorológicas utilizadas para simular los caudales con el modelo  hidrológico 
+y entrenar los modelos de ANNs son descritas en el capítulo \ref{datos}. Estas abarcan un período temporal de 20 años e incluyen series de 
+precipitación, series de temperatura máxima y temperatura mínima.  
 
-Resultados obtenidos
+Una vez generados los valores de los caudales simulados por el modelo hidrológico se procedió a entrenar tres configuraciones
+diferentes de modelos de ANNs descritos en el capítulo \ref{ANNs}. Para esto, se han divido los datos en conjuntos de entrenamiento y 
+validación y se han re-estructurado para que puedan ser utilizados como inputs en las diferentes estructuras de redes consideradas. 
+Para validar los modelos se ha utilizado demás de la función de loss, incluida en los algoritmos de las ANNs, el coeficiente de
+Nash-Stutcliffe (NSE) que es ampliamente utilizado en hidrología. Con el fin de determinar 
+la influencia que los restos o diferencias entre los caudales predichos por las ANNs y los caudales simulados con 
+el modelo MELCA ejercen al determinar el balance hídrico en CHRC, se ha utilizado el software MODSIM que permite 
+optimizar la distribución del agua sobre los cauces de la cuenca teniendo en cuenta los diferentes usos del agua.
 
-\section{Organización del documento}
+Por último, y con el objetivo de poder ejecutar los modelos desarrollados de manera sencilla en otras cuencas hidrográficas, se ha creado
+una aplicación REST APIs  utilizando la librería flask de python, los detalles del proceso de desarrollo se describen en el anexo \ref{Desarrollo}.
 
-Organización del documento
 
-\begin{itemize}
-    \item Capítulo 1.
-    \item Capítulo 2.
-    \item Capítulo 3.
-\end{itemize}
+
+
+
+
+
+
+
+
+% --que se hizo en este trabajo
+
+
+% El problema de prediccion en cuencas no calibradas, es funcamentalmente un problema de extrapolacion. 
+
+% -- tipos de modelos clasicos
+
+% Modelos agregados, conceptuales o de caja gris. También son
+% modelos reducibles a series temporales (es decir, admiten una
+% formulación state-space), tienen una base conceptual mecanicista.
+% • Modelos basados en procesos físicos. Son los modelos que aspiran
+% a resolver en un dominio de cálculo 3D las ecuaciones que rigen los
+% procesos físicos fundamentales del suelo, su superficie y la capa de
+% aire superior (Navier-Stokes + leyes de la termodinámica).
+
+
+% los modelos agregados Se basan en un marco conceptual mecanicista. Suelen hacer uso de una
+% estructura de depósitos conceptuales, en serie y en paralelo, como
+% representación abstracta y simplificada de la cuenca.
+% • Son metáforas matemáticas del territorio con pocos grados de libertad
+% (típicamente 4-7 parámetros). Sus parámetros pueden tener un sentido
+% físico, pero no son parámetros físicos: no pueden medirse in situ y deben
+% de obtenerse mediante calibración a partir de series observadas.
+% • Al tener pocos parámetros (parsimonia), se pueden calibrar con relativa
+% facilidad, empleando métodos automáticos o semi-automáticos.
+% • Suelen ser de código abierto y son computacionalmente eficientes, lo
+% que permite explotarlos en continuo (no eventos aislados) con series
+% largas, en sistemas en tiempo real y/o de forma probabilista.
+% • De forma general, no son extrapolables en el espacio (el modelo de una
+% cuenca no es válido para otra). En las cuencas donde no existen aforos,
+% se requieren técnicas de regionalización.
+
+
+
+
+
+% \section{Resultados obtenidos}
+
+% Resultados obtenidos
+
+% \section{Organización del documento}
+
+% Organización del documento
+
+% \begin{itemize}
+%     \item Capítulo 1.
+%     \item Capítulo 2.
+%     \item Capítulo 3.
+% \end{itemize}

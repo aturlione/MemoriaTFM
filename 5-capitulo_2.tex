@@ -1,11 +1,15 @@
 \chapter{Modelo Hidrológico}
-\label{capitulo 2}
-\section{Modelo LEM}
-Para generar las series de caudales de descarga que han sido utilizadas como variables objetivos
-al entrenar los modelos de redes neuronales se ha utilizado el modelo 
-de equilibrio logístico, en adelante LEM, desarrollado por IHCantabria. 
+\label{Modelo_Hidrológico}
 
-Este modelo representa el proceso hidrológico a partir de las siguientes hipótesis empíricas:
+Cómo se ha descrito anteriormente, se ha utilizado el modelo hidrológico MELCA
+ para generar las series de caudales de descarga que han sido utilizadas como variables objetivos
+al entrenar los modelos de redes neuronales (capítulo \ref{ANNs}). 
+ Este modelo está basado en LEM y fue desarrollado por IHCantabria.
+ A continuación se describen las características principales de estos modelos.
+
+\section{Modelo LEM}
+
+Este modelo simula el proceso hidrológico en una cuenca hidrográfica a partir de las siguientes hipótesis empíricas:
 \begin{enumerate}
     \item Las cuencas hidrográficas son sistemas complejos que persiguen continuamente un equilibrio dinámico, 
     dado por una combinación de factores climáticos ( precipitación y evapotranspiración potencial) 
@@ -32,8 +36,8 @@ Este modelo representa el proceso hidrológico a partir de las siguientes hipót
 
 \end{enumerate}
 
-La versión estándar del LEM adopta un modelo lineal para el submodelo de enrutamiento y toma la forma del siguiente sistema de 
-ecuaciones:
+La versión estándar del LEM adopta un modelo lineal para el submodelo de enrutamiento y toma la forma del siguiente sistema 
+de ecuaciones:
 
 
 \begin{equation}
@@ -63,7 +67,7 @@ ecuaciones:
 Donde $R$ y $Q$ son la escorrentía total y la descarga medida en la salida de la cuenca, respectivamente. 
 $P$ y $E$ son la precipitación y la evapotranspiración potencial en cada paso de tiempo, mientras que $\hat{P}$ y $\hat{E}$ 
 son valores promediados de $P$ y $E$ durante un periodo de tiempo característico, respectivamente. 
-Los parámetros del modelo son:
+Los parámetros del modelo entonces son:
 \begin{itemize}
     \item $\lambda$ (días), el tiempo característico de respuesta  de la cuenca. %($1/(25.465*log(s0)-19.494)$).
     \item $S_0$ (mm), que representa un espesor medio de suelo o una capacidad de almacenamiento característica de la cuenca.
@@ -74,15 +78,15 @@ Los parámetros del modelo son:
 Este sistema de ecuaciones diferenciales ordinarias puede resolverse numéricamente con un esquema explícito 
 incondicionalmente estable, ya que  que todas las ecuaciones, y en especial la logística, tienen solución analítica.
 
-Como se ha mencionado en el capítulo \ref{capitulo 1}, los datos de precipitación correspondientes a las zonas más 
+Como se ha mencionado en el capítulo \ref{datos}, los datos de precipitación correspondientes a las zonas más 
 altas de la cuenca son escasos. Es por esto que es necesario aplicar  dos factores $fcp$ y $fce$ 
-que tiene en cuenta la influencia de la altitud de cada subcuenca y
+que tienen en cuenta la influencia de la altitud de cada subcuenca y
  sirven para calibrar el modelo y corregir las series de precipitaciones y evo-transpiración, respectivamente.
  Para calibrar el modelo se han utilizado datos de caudales recogidos por diferentes estaciones de aforo proporcionados por
- MAATE \cite{MAATE} y los valores de caudal promedio aportados por el documento de Aportes a la planificación para 
- la gestión integral de los recursos hídricos citado en \cite{Rodriguez}. 
- El modelo es entonces calibrado ajustando los factores de corrección $fcp$ y $fce$ de manera tal que los caudales mensuales medios 
- simulados se acerquen lo máximo posible a los valores medidos en las estaciones de aforo.
+ MAATE \cite{MAATE} y los valores de caudal promedio aportados por el documento de "\textit{Aportes a la planificación para 
+ la gestión integral de los recursos hídricos}" citado en \cite{Rodriguez}. 
+ El modelo es entonces calibrado en cada sub-cuenca de manera individual, ajustando los factores de corrección $fcp$ y $fce$ 
+ de modo tal que los caudales   mensuales medios  simulados se acerquen lo más posible a los valores medidos en las estaciones de aforo.
  
  
 %  \begin{figure}[h!]
@@ -110,6 +114,19 @@ que tiene en cuenta la influencia de la altitud de cada subcuenca y
 %    25$\%$ y 75$\%$, y las barras negras los extremos (los puntos en rojo son tratados como datos atípicos). 
 %     Se puede observar que a calibración ha ayudado a igualar considerablemente los caudales modelados con los caudales aforados.
 
+
+
+\subsection{Modelo MELCA}
+
+MELCA es un modelo hidrológico semi-distribuido basado en LEM. 
+Este modelo considera varias subcuencas, cada una de ellas con sus parámetros y forzamientos climáticos diferenciados
+y permite incluir una serie de particularidades asociadas a las cuencas tropicales andinas como la inclusión de páramos 
+y bofedales con sus topologías y el estado de conservación. El modelo convierte la superficie de cada uno de estos 
+ecosistemas andinos en una capacidad equivalente de almacenamiento del suelo. 
+También  incluye factores de corrección para  la evo-transpiración en zonas de alta montaña, el efecto de glaciares 
+y la aportación de agua atmosférica proveniente de niebla (flujo que es significativo en zonas cuencas andinas tropicales). 
+
+
 \begin{figure}[h!]
     \begin{center}
       \includegraphics[height=3.5in]{Figures/caudales.png}
@@ -119,19 +136,9 @@ que tiene en cuenta la influencia de la altitud de cada subcuenca y
     \end{center}
   \end{figure}
 
-En la figura \ref{caudales} se muestran a modo de ejemplo los caudales de descarga diarios simulados con el modelo LEM 
+En la figura \ref{caudales} se muestran a modo de ejemplo los caudales de descarga diarios simulados con el modelo MELCA 
 para las cuencas con ids 8, 57 y 75. Se puede observar que la cuenca 75, que se encuentra más cerca del amazonas y posee 
-un régimen más húmedo posee una caudal considerablemente mayor.
-% \subsection{Modelo MELCA}
-
-% MELCA es un modelo hidrológico semi-distribuido basado en LEM. 
-% Este modelo considera varias subcuencas, cada una de ellas con sus parámetros y forzamientos climáticos diferenciados
-% y permite incluir una serie de particularidades asociadas a las cuencas tropicales andinas como la inclusión de páramos 
-% y bofedales con sus topologías y estado de conservación. El modelo convierte la superficie de cada uno de estos 
-% ecosistemas andinos en una capacidad equivalente de almacenamiento del suelo. 
-% También  incluye factores de corrección para  la evotranspiración en zonas de alta montaña, el efecto de glaciares 
-% y la aportación de agua atmosférica proveniente de niebla (flujo que es significativo en zonas cuencas andinas tropicales). 
-
+un régimen más húmedo, posee una caudal considerablemente mayor.
 % \subsection{Parámetros físicos}
 % El modelo LEM  usa 5 parámetros de entrada, el área de la cuenca, 
 % el almacenamiento característico $s_0$, el parámetro de enrutamiento $\tau$, 
@@ -290,8 +297,7 @@ del agua. Además, brinda soporte para la toma de decisión en el uso del agua e
 \begin{figure}[h!]
     \begin{center}
       \includegraphics[height=8.5in]{Figures/modzim/figs.png}
-      \caption{ Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta
-      el año 2020. }
+      \caption{ Esquema conceptual de CHRC}
       \label{caudales}
     \end{center}
   \end{figure}
@@ -310,7 +316,7 @@ del agua. Además, brinda soporte para la toma de decisión en el uso del agua e
     \sum_{k \in A}c_k\cdot q_k
    \end{equation}
 
-   donde $q_k$ es el caudal en el enlace $k$, $c_k$ son pesos o las prioridades de derecho de agua por unidad de caudal En
+   donde $q_k$ es el caudal en el enlace $k$, $c_k$ son pesos o las prioridades de derecho de agua por unidad de caudal en
    el enlace $k$. 
 
    La minimización de esta función debe conservar el balance de masa, es decir, 
@@ -331,11 +337,11 @@ las pérdidas en los canales y los requisitos de flujo en la corriente y resuelv
 con el algoritmo de relajación Lagrangiana RELAX-IV \cite{modim3}.
 
 
-En la figura \ref{modsim}, se muestra el esquema conceptual que representa a la cuenca Chambo. Los círculos son
+En la figura \ref{modsim}, se muestra el esquema conceptual que representa a la cuenca CHRC. Los círculos son
 nodos sin almacenamiento que representan confluencias y desviaciones de los caudales de la cuenca,
-las flechas o links, representan los caudales fluyentes entre nodos y los cuadrados las demandas consuntivas de agua.
+las flechas o links representan los caudales fluyentes entre nodos y los cuadrados las demandas consuntivas de agua.
 Se han considerado 4 tipos de demandas diferente: humana con prioridad 1, industrial, riego 
-acuicultura con prioridad 2 y energéticas con prioridad 3.
+y acuicultura con prioridad 2 y energéticas con prioridad 3.
 
 
 % Una vez obtenidos los caudales naturales y las demandas en la cuenca del río chambo se pueden calcular los caudales intervenidos

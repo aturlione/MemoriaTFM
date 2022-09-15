@@ -1,27 +1,26 @@
 \chapter{Discusiones y Conclusiones}
 \label{Discusiones y conclusiones}
 
-Los resultados descritos en la sección anterior demuestran que el modelo que realiza los mejores ajustes es el LSTM1 cuando es entrenado en 
+Los resultados descritos en el capítulo anterior demuestran que el modelo que realiza los mejores ajustes es el LSTM1 cuando es entrenado en 
 el espacio de las componentes principales. Aproximadamente un 70$\%$ de los ajustes obtenidos con el mismo son excelentes mientras que esta cifra  
 desciende al 60$\%$ para los modelos denso y LSTM1 entrenado localmente. Si bien los últimos modelos poseen una buena performance en la mayoría de 
 las sub-cuencas, presentan mucha variación en el coeficiente de NSE, alcanzando incluso valores negativos en algunos puntos para los cuales 
-el modelo LSTM1 PCA arroja ajustes que son desde aceptables hasta excelentes. Por otro lado el experimento realizado con el modelo LSTM2, que considera 
+el modelo LSTM1 PCA arroja resultados que son desde aceptables hasta excelentes. Por otro lado el experimento realizado con el modelo LSTM2, que considera 
 un entrenamiento secuencial utilizando solamente los valores de la serie de caudales de descarga de las sub-cuencas, ha demostrado
 tener una  mala performance en la mayoría de los puntos. 
 
 Los resultados antes mencionados nos llevan a concluir que la inclusión de las celdas de memoria LSTM y la presencia de componentes principales 
 mejoran notablemente la performance de los modelos en cuencas hidrográficas. 
-Por un lado las celdas LSTM permiten almacenar información de eje temporal sobre los diferentes procesos  que ocurren en  las cuencas,
+Por un lado las celdas LSTM permiten almacenar información de eje temporal sobre los diferentes procesos  que ocurren en  las sub-cuencas,
 y así captar mas información sobre la relación entre eventos de precipitación y descarga. Por otro lado, 
 las componentes principales reducen considerablemente la dimensión del espacio predictor
 y combinan la información proveniente de todo el dominio del mismo, lo que soluciona problemas de sobre ajustes y el problema
 des desvanecimiento del loss presente en las cuencas más pequeñas y áridas. 
-Por último, se ha demostrado que los resultados obtenidos con redes neuronales
-pueden ser utilizados para simular operaciones en la cuenca Chambo, ya que se ha comprobado que
-el resultado del balance hidrológico obtenido con Modsim son los mismo que los obtenidos con los valores simulados por el modelo LEM.
+Finalmente, una vez entrenados lo modelos, se ha demostrado que los resultados obtenidos con redes LSTM
+pueden ser utilizados para simular operaciones en la cuenca CHRC, ya que se ha comprobado que
+el resultado del balance hidrológico obtenido con MODSIM es el mismo que los obtenidos con los valores simulados por el modelo LEM.
 
-
-Estos resultados concuerdan con estudios anteriores en los cuales se concluye que 
+Los resultados obtenidos a lo largo del trabajo apuntan en la misma línea que estudios recientes en los cuales se concluye que 
 las redes neuronales generalmente requieren una gran cantidad de datos de entrenamiento y que 
 los ajustes que se obtienen al entrenar modelos de aprendizaje profundo en una sola sub-cuenca no suelen ser fiables \cite{Kratzert}. 
 Esto supone una gran diferencia con el modelado y calibrado hidrológico tradicional que normalmente obtiene 
@@ -33,14 +32,18 @@ Los modelos LSTM en cambio, demuestran tener la capacidad de aprender simultáne
 y espaciales en el mismo marco predictivo, lo que evita muchos problemas que actualmente se encuentran 
 asociados con la estimación y transferencia de parámetros de modelos hidrológicos tradicionales \cite{Kratzert}, \cite{nearing}.
 
-
-Un conclusión importante es entonces que las celdas LSTM son capaces de generar un modelo único a partir de grandes conjuntos de datos de 
-que sea capaz de reflejar los comportamientos hidrológicos regionales específicos de cada sub-cuenca
-ya que estos modelos son capaces de vincular las características locales de las sub-cuencas y aprender 
+Una conclusión importante es entonces que las celdas LSTM son capaces de generar un modelo único a partir de grandes conjuntos de datos  
+capaz de reflejar los comportamientos hidrológicos regionales específicos de cada sub-cuenca
+ya que estos modelos  vinculan las características locales de las sub-cuencas y aprenden
 un modelo general a partir de los datos combinados de todas ellas. 
-Más aún, existe un estudio donde se han utilizado datos provenientes de varios cientos de cuencas continentales en los Estados Unidos
-a lo largo de 30 años, que demuestra que los modelos de aprendizaje profundo arrojan mejores predicciones para los caudales de descarga  
-en cuencas no aforadas que los obtenidos por modelos tradicionales calibrados con registros de datos en cuencas aforadas\cite{nearing}\cite{Kratzert}.
 Es por esto que concluimos que la principal virtud de las redes neuronales no es simplemente el hecho de que ajusten bien sino su capacidad de
 aprendizaje y  flexibilidad para ser utilizadas en una variedad de  lugares y condiciones diferentes.
 
+
+Por último, como posibles mejores para trabajos futuros se propone concatenar los descriptores estáticos de las sub-cuencas, 
+como por ejemplo el área, la longitud del cauce, etc., al espacio predictor. Otra mejora podría ser definir una función objetivo al 
+entrenar los modelos que no dependa del valor medio de los caudales de descarga de las diferentes cuencas. Kratzert etal. \cite{Kratzert} 
+proponen por ejemplo usar directamente una definición global del coeficiente de Nash-Stutcliffe durante el entrenamiento
+de los datos. En este caso, si bien se perdería la linelidad entre las métricas del RMSE y el NSE,  esto permitiría 
+contemplar el hecho de que las variancias de los datos observacionales difieren en distintas cuencas y así evitar el sobre-peso 
+asociado a las cuencas más grandes y húmedas.

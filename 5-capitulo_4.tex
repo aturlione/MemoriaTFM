@@ -1,5 +1,5 @@
 \chapter{Modelos de aprendizaje profundo}
-\label{capitulo 3}
+\label{ANNs}
 
 %\section{Teoría sobre redes neuronales}
 %\section{Estructura de las redes}
@@ -12,10 +12,10 @@
 \section{Introducción teórica}
 
 Las redes neuronales son modelos computacionales cuyo funcionamiento se inspira en el funcionamiento de las 
-neurona cerebrales reales cuya función principal es recibir, procesar y transmitir información a través de señales
-químicas y eléctricas. En líneas generales las neuronas se especializan en la recepción de estímulos y generación
+neurona cerebrales reales, su función principal es recibir, procesar y transmitir información a través de señales
+químicas y eléctricas. En líneas generales, las neuronas se especializan en la recepción de estímulos y generación
 de impulsos entre ellas mediante conexiones llamadas sinapsis. Cuando una neurona recibe un impulso 
-eléctrico que la activa, esta dispara un impulso que a su vez estimula a otras neuronas a las que esta conectada. 
+eléctrico que la activa, esta dispara un impulso que a su vez estimula a otras neuronas a las que está conectada. 
 Algunas de estas neuronas a su vez se activan y se disparan activando a otras y así sucesivamente 
 propagando los estímulos por toda la red. Entre más se practique una tarea, las conexiones que se generan entre las 
 neuronas se hacen más robustas, esto es el proceso de aprendizaje. 
@@ -34,7 +34,7 @@ cuales se aplica una función de activación que activa a la neurona si esta sup
 dado. La función de activación además de cumplir la función de activar a las neuronas, capta las 
 características no lineales de los datos. 
 
-Una red neuronal consiste en un conjunto de neuronas conectados entre sí 
+Una red neuronal (ANNs, de sus siglas en inglés) consiste de un conjunto de neuronas conectadas entre sí 
 (Fig. \ref{perceptron}-a), que al igual que en el caso de las neuronas reales son capaces de ser entrenadas para aprender 
 a realizar una tarea dada generando diferentes conexiones entre ellas. 
 
@@ -55,7 +55,7 @@ correspondiente patrón de salida $Y_p=(y_{1p},...y_{np})$.
 El entrenamiento  se basa en que la red sea capaz de reproducir los patrones de salida con el menor error posible.
 
 El proceso de aprendizaje de la red consiste en la aplicación de métodos de optimización matemáticos para obtener los pesos $w_{ij}$ 
-que minimizan una cierta función de error o \textit{loss}. Los algoritmos más populares se basan en minimizar el error cuadrático 
+que minimizan una cierta función de coste o \textit{loss}. Los algoritmos más populares se basan en minimizar el error cuadrático 
 medio (RMSE):
 
 \begin{equation}
@@ -83,9 +83,9 @@ donde $\alpha$ es la tasa de aprendizaje.
 
 
 El algoritmo de retro-propagación consta de dos pasos, en primer lugar la entrada $X_p$ se propaga hacia adelante, obteniendo el valor
-de todas las unidades ocultas y las salidas $\hat{y}_p$ y por lo tanto el error asociado a estas. Los valores obtenidos se utilizan para actualizar
-los pesos de la capa de salida, y estos se propagan hacia atrás para actualizar los pesos de las capas ocultas. Esto se repite para cada
-patrón de entrenamiento. En el esquema \ref{backprop} se resume todo el proceso.
+de todas las unidades ocultas y las salidas $\hat{y}_p$ y por lo tanto el error asociado a éstas. Los valores obtenidos se utilizan para actualizar
+los pesos de la capa de salida, y éstos se propagan hacia atrás para actualizar los pesos de las capas ocultas. Esto
+ se repite para cada patrón de entrenamiento. En el esquema \ref{backprop} se resume todo el proceso.
 
 
 % Las redes neuronales aprenden a partir de muestras o ejemplos, hacen una operación de propagación hacia adelante,
@@ -108,20 +108,68 @@ patrón de entrenamiento. En el esquema \ref{backprop} se resume todo el proceso
   \end{center}
 \end{figure}
 
-Las redes neuronales recurrentes con memoria a largo plazo (LSTM) son redes RNN que poseen conexiones entre capas 
+Las ANNs recurrentes con memoria a largo plazo (LSTM) son redes que poseen conexiones entre capas 
 no consecutivas (Fig. \ref{topologias}-c) que además incluyen una conexión extra entre las neuronas dedicadas
  a almacenar información para largo períodos de tiempo. 
- Esta "memoria a largo plazo" soluciona el problema del desvanecimiento que presentan las redes recurrentes 
+ Esta "memoria a largo plazo" soluciona el problema del desvanecimiento del gradiente que presentan las redes recurrentes 
  tradicionales\cite{Kratzert}, \cite{olah}.
 
-
-En la figura \ref{LSTM} se puede observar la estructura de una celda de una red recurrente, las celdas amarillas son 
-capas de neuronas y los círculos rosas son puntos en donde se realiza una cierta operación. La clave en estas
+En la figura \ref{LSTM} se puede observar la estructura de una celda de una red LSTM, donde $x_t$ es un input 
+dado a un tiempo $t$, $h_t$ el correspondiente output, las celdas amarillas son 
+capas de neuronas densas y los círculos rosas son puntos en donde se realiza una cierta operación. La clave en estas
 redes es la línea horizontal superior que recorre la cadena casi sin sufrir modificaciones y permite que la información
 fluya a través de la red. Mediante las cuatro entradas (celdas amarillas en el esquema),
 estas redes poseen la habilidad de eliminar o agregar información al estado de la celda y decidir qué parte de la información
-proveniente de capas anteriores es relevante \cite{olah}. 
+proveniente de capas anteriores es relevante y que parte debe ser olvidada \cite{olah}. 
 
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[height=3.5in]{Figures/LSTMs.png}
+    \caption{ Recorrido por el funcionamiento de una celda LSTM. Figuras tomadas de \cite{olah}. }
+    \label{LSTMrec}
+  \end{center}
+\end{figure}
+
+En la figura \ref{LSTMrec}, se muestra el recorrido paso a paso del funcionamiento de una celda LSTM. 
+El primer paso (panel 1) es decidir 
+que parte de la información será descartada. Esta decisión se realiza por una sigmoide llamada en inglés ``\textit{forget gate layer}'':
+
+\begin{equation}
+  f_t = \sigma(W_f\cdot[h_{t-1},x_t]+b_f)
+\end{equation}
+
+Esta puerta recibe el input actual $x_t$ y la salida del tiempo anterior $h_{t-1}$ y arroja un valor entre 0 y 1, 0 significa
+ `` olvidar esto completamente''  y 1 significa ``mantener esto completamente''. 
+
+ El siguiente paso  (paneles 2 y 3)  se encarga de actualizar el estado de la celda del valor 
+ de $C_{t-1}$ al nuevo valor $C_{t}$ y tiene dos partes, primero se multiplica el antiguo estado por $f_t$, y luego
+ se suma el valor del nuevo candidato $C'_t$, escalado por un factor que cuantifica la magnitud del cambio:
+ 
+ \begin{equation}
+  C_t = f_t\cdot C_{t-1}+i_t\cdot C'_t
+\end{equation}
+
+donde,
+
+ \begin{equation}
+  i_t = \sigma(W_i\cdot[h_{t-1},x_t]+b_i)
+\end{equation}
+
+\begin{equation}
+  C'_t = tanh(W_C\cdot[h_{t-1},x_t]+b_C)
+\end{equation}
+
+
+
+Finalmente, se calcula la salida $h_t$ de la siguiente manera (panel 4):
+
+\begin{equation}
+  o_t = \sigma(W_o\cdot[h_{t-1},x_t]+b_o)
+\end{equation}
+
+\begin{equation}
+  h_t = o_{t}\cdot tanh(C_t)
+\end{equation}
 
 \section{Topología de los modelos utilizados}
 Se han considerados 3 modelos que poseen una estructura básica que consta de una capa de entrada, dos o tres capas ocultas
@@ -231,9 +279,10 @@ los siguientes términos para cada caso:
 \end{equation}
 
 La función de estos términos extra es la de reducir el valor de los parámetros haciendo incluso que la influencia de 
-algunas variables de entrada sean nula en la salida de la red, lo que da lugar a una selección de variables de forma natural y
+algunas variables de entrada sea nula en la salida de la red, lo que da lugar a una selección de variables de forma natural y
 reduce el posible sobreajuste de los datos. El valor de $\lambda$ varía entre 0 y 1 y controla la magnitud
 de la reducción de los parámetros. 
+
 
 \subsection{Funciones de activación}
 En todas las capas se ha considerado la misma función de activación $f$, y se han entrenado los modelos considerando 
@@ -333,7 +382,7 @@ con el método "GridSearchCV" disponible en la librería scikit-learn \cite{scik
    \hline
    &solver &   rmsprop, adam, sgd\\
    &Neuronas &  10, 80, 200 \\
-   LSTM1 indv &activación & sigmoid,relu,tanh,linear \\
+   LSTM1 loc &activación & sigmoid,relu,tanh,linear \\
    &alpha &  0.0001,0.0002,0.0003 \\
    &Regularización & l1,l2 $\lambda =0.0001$  \\
 
@@ -341,8 +390,8 @@ con el método "GridSearchCV" disponible en la librería scikit-learn \cite{scik
    &solver &   rmsprop, adam, sgd\\
    &Neuronas &  10, 80, 200 \\
    LSTM2 &activación & sigmoid,relu,tanh,linear \\
-   &alpha &  \\
-   &Regularización & l1,l2 $\lambda =0.0001$  \\
+   &alpha & 0.001 \\
+   &Regularización & l1,l2 $\lambda =0.0000001$  \\
    \hline
 
   \end{tabular}
@@ -353,7 +402,7 @@ con el método "GridSearchCV" disponible en la librería scikit-learn \cite{scik
 
 
   En la tabla \ref{hyper} se muestran los hyper-parámetros explorados para entrenar los diferentes modelos. En el caso
-  del entrenamiento global realizado para los modelos denso y LSTM1 PCA, tres de 
+  del entrenamiento global, realizado para los modelos denso y LSTM1 PCA, tres de 
   estos parámetros (el número de neuronas, la función de activación y $\lambda$) 
   han sido optimizados mediante el método GridSearchCV.
 
@@ -419,11 +468,11 @@ todas las subcuencas que constituyen la cuenca hidrológica Chambo:
 
 \subsection{Entrenamiento local}
  Por otro lado el modelo LSTM1 también se ha entrenado individualmente cuenca por cuenca, para lo cual se han utilizado
-matrices $X_{ind}$ e $Y_{ind}$ con las siguientes formas:
+matrices $X_{loc}$ e $Y_{loc}$ con las siguientes formas:
 \vspace{5mm}
 
 \begin{equation*}
-    X_{indv,id}= 
+    X_{loc,id}= 
     \begin{bmatrix}
         p_{1,id} & T^{max}_{1,id} &  T^{min}_{1,id} \\
         ... & ... &  ... \\
@@ -435,7 +484,7 @@ matrices $X_{ind}$ e $Y_{ind}$ con las siguientes formas:
 
 
 \begin{equation*}
-    Y_{indv,id}= 
+    Y_{loc,id}= 
     \begin{bmatrix}
         q_{1,id}  \\
         ...  \\
@@ -453,14 +502,14 @@ La división entre los conjuntos de entrenamiento y test se ha hecho de la misma
 
 \subsection{Entrenamiento secuencial}
 
-Finalmente, el modelo LSTM2 se ha entrenado de manera secuencial utilizando únicamente los valores simulados de los caudales en la matriz $Y_{indv,id}$.
-En este enfoque, la red utiliza los valores de los caudales en tiempos anteriores
+Finalmente, el modelo LSTM2 se ha entrenado de manera secuencial, utilizando únicamente los valores simulados de los caudales 
+en la matriz $Y_{loc,id}$. En este enfoque, la red utiliza los valores de los caudales en tiempos anteriores
  $q_{t-1}, q_{t-2}, q_{t-n}$ para predecir el valor actual $q_{t}$. 
  La variable $n$ también llamada "look back" se puede elegir arbitrariamente y se puede ajustar haciendo 
  una busca con el método de cross-validation.
 
 
-\subsection{Análisis de componentes principales}
+\section{Análisis de componentes principales}
 
 El espacio de variables predictoras del conjunto de entrenamiento 
 que contiene la información de las 76 subcuencas posee una dimensión (160,228).
@@ -477,11 +526,18 @@ La reducción de dimensiones se realiza escogiendo las direcciones que captan la
 de los datos originales, es decir las PCA con las mayores varianzas. 
 
 Luego de realizar este análisis se ha encontrado que se puede explicar el 96$\%$ de la varianza del conjunto
-de datos original considerando solo las primeras 9 componentes. Por lo tanto la reducción del espacio
+de datos original considerando sólo las primeras 9 componentes (ver figura \ref{PCA}). Por lo tanto la reducción del espacio
 predictor es considerable, ya que ha pasado de ser (160,228) a (160,9).
 
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[height=2.5in]{Figures/PCA.png}
+    \caption{ Porcentaje de varianza explicada acumulada para las primeras 9 componentes principales.}
+    \label{KCV}
+  \end{center}
+\end{figure}
 
-\subsection{Coeficiente de Nash-Sutcliffe}
+\section{Coeficiente de Nash-Sutcliffe}
 \label{sectNSE}
 
 
@@ -504,9 +560,9 @@ predictor es considerable, ya que ha pasado de ser (160,228) a (160,9).
 \end{center}
   \end{table}
 
-Además de utilizar la función de loss para validar los modelos durante el entrenamiento de los mismos, 
-también se ha utilizado el coeficiente Nash-Sutcliffe (NSE) \cite{NSE} en el conjunto de test. Este coeficiente
-es uno de los más utilizados en hidrología y se define de la siguiente manera:
+Además de utilizar la función de loss para validar los modelos durante el entrenamiento, 
+también se ha utilizado el coeficiente Nash-Sutcliffe (NSE) \cite{NSE} para evaluar la performance de los mismos en el conjunto de test. 
+Este coeficiente es uno de los más utilizados en hidrología y se define de la siguiente manera:
 
 \begin{equation}
   NSE = 1-\frac{\sum^n_i(y_i-\hat{y}_i)^2}{\sum^n_i(\bar{y}-\hat{y}_i)^2}
@@ -514,7 +570,9 @@ es uno de los más utilizados en hidrología y se define de la siguiente manera:
 
 Los valores de NSE varían entre $-\infty$ y 1, siendo este último valor el correspondiente a un ajuste perfecto.
 En la tabla \ref{tablaNSE} se indica la relación entre los valores de NSE y la calidad de los ajustes.
-
+Este coeficiente equivale a una combinación lineal del error medio
+cuadrático, la desviación y el coeficiente de correlación
+entre las series.
 
 
 %  \subsection{Validación de los modelos}

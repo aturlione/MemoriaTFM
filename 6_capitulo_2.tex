@@ -2,7 +2,7 @@
 \label{capitulo 3}
 
 En este capítulo se muestran los resultados obtenidos al entrenar los modelos previamente descritos, 
-el objetivo es dado un evento de precipitación,  predecir los caudales de descarga naturales en cada una de las sub-cuencas que conforman Chambo. 
+el objetivo es predecir los caudales de descarga naturales en cada una de las sub-cuencas que conforman CHRC para  un evento de precipitación dado. 
 La performance predictiva de los modelos es evaluada en el conjunto de test, 
 en la tabla \ref{hyperres} se muestran los hyper-parámetros utilizados para cada modelo obtenidos
 tras realizar la exploración descrita en \ref{cal}.
@@ -48,9 +48,9 @@ en el espacio de las componentes principales. Las líneas horizontales muestran 
 ajustes excelentes y aceptables. 
 
 El modelo LSTM1 posee una mejor performance general a lo largo de toda la cuenca, 
-en este caso se  puede considerar que el ajuste para el 68$\%$ de las subcuencas es excelente, 
-mientras que el 11$\%$ de los ajustes son buenos y el 16$\%$  aceptable. 
-Por otro lado, si bien la performance general del modelo denso es buena (el 63$\%$ de los ajustes es excelente), 
+en este caso se  puede considerar que el ajuste para el 68$\%$ de las sub-cuencas es excelente, 
+mientras que el 11$\%$ de los ajustes son buenos y el 16$\%$  aceptables. 
+Por otro lado, si bien la performance general del modelo denso es buena (el 68$\%$ es mayor a $0.65$), 
 el porcentaje de fallos asciende al 13$\%$. Se puede observar que en las subcuencas con ids 5, 26, 31 y 66 el coeficiente NSE adquiere 
 valores negativos, mientras que el modelo LSTM1 realiza muy buenos ajustes.
 La mejor performance del modelo LSTM1 se debe a que las celdas de memoria permiten una interpretación a lo largo del eje del tiempo de 
@@ -70,12 +70,12 @@ eventos de precipitación y descarga.
 En la figura \ref{losscomp} se muestran los valores de la función de loss obtenidos en cada época o iteración durante el entrenamiento
 de los modelos denso y LSTM1 PCA.  Durante el entrenamiento se ha dividido el conjunto de datos de manera que el 
 85$\%$ de los mismos han sido utilizados para entrenar el modelo y el 15$\%$ restante para validarlo y así evitar el sobre ajuste
-monitorizando la evolución del loss. Además se ha implementado el callback \textit{"early sttoping"} que 
+monitorizando la evolución del loss. Además se ha implementado el callback "\textit{early sttoping}" que 
 interrumpe la ejecución cuando el loss en el conjunto de validación comienza a aumentar.
 
 Si se comparan ambos modelos, podemos observar que
-en el modelo LSTM1 PCA aprende más rápido ya que en solo 50 épocas el valor de loss alcanza su valor de equilibrio.
-En el caso del modelo denso, esto ocurre luego de 150 épocas. Por otro lado, y en concordancia con los resultados
+en el modelo LSTM1 PCA aprende más rápido ya que en aproximadamente 50 épocas el valor de loss alcanza su valor de equilibrio, 
+en el caso del modelo denso, esto ocurre luego de 150 épocas. Por otro lado, y en concordancia con los resultados
 arrojados por el coeficiente NSE, el valor final del loss en el modelo LSTM1 PCA (entrenamiento: 0.3587 , validación: 0.5787)
 es menor que en el modelo denso (entrenamiento: 0.9245 validación: 1.0060) los que indica un mejor ajuste global. 
 
@@ -93,7 +93,7 @@ es menor que en el modelo denso (entrenamiento: 0.9245 validación: 1.0060) los 
 En la figura \ref{NSEs_Area_prec}, se muestra la comparación entre los valores de NSE obtenidos para el modelo LSTM1 con PCAs 
 (curva continua) y sin PCAs (curva a rayas) en función del área de la cuenca (panel superior) y de la variación de precipitación 
 (panel inferior). Los resultados obtenidos cuando consideramos las 288 características
-de entrada muestran una gran variación de los valores de NSE y peores predicciones. 
+de entrada muestran una gran fluctuación de los valores de NSE y en general peores predicciones. 
 Una razón por la que las componentes principales funcionan mejor puede deberse a que éstas agregan la información proveniente de 
 todo el dominio del espacio predictor \cite{Manu}. En línea con este argumento, en estas figuras también se puede observar que el 
 área de las sub-cuencas y la variación de precipitación son factores relevantes que condicionan la calidad de los ajustes. 
@@ -121,16 +121,26 @@ más pequeñas y áridas disminuye \cite{Kratzert}.
 % mean discharge so that we do not overweight large humid basins (and thus perform poorly on small, arid basins).
 
 Este efecto es también visible cuando entrenamos el modelo LSTM1 de manera local,
-como puede verse en la figura \ref{NSE3} en la mayoría de los casos la performance del modelo global  es 
+como puede verse en la figura \ref{NSE3} en la mayoría de los casos, la performance del modelo global  es 
 mejor que la del modelo local. Este resultado se encuentra alineado con estudios anteriores 
 que demuestran que los modelos LSTM entrenados en un gran número de sub-cuencas son capaces de vincular Las
 características de las mismas para aprender un modelo global que a su vez es capaz de reflejar  
 explícitamente las similitudes y diferencias de las cuencas a nivel local  \cite{Kratzert}. 
-Más aun, estos estudios han demostrado que las redes LSTM son incluso capaces de modelar la presencia de nieve y 
-almacenar esta información en las celdas específicas de memoria sin siquiera haber sido entrenadas directamente en 
-ningún tipo de observación relacionada con nieve más allá de la precipitación total y la temperatura \cite{Kratzert2}.
 
-\section{Caudales naturales}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[height=3.5in]{Figures/NSE/CDF.png}
+    \caption{ Función de distribución acumulada para todos los modelos de ANNs a lo largo de todas las sub-cuencas de CHRC.}
+    \label{CDF}
+  \end{center}
+\end{figure}
+
+En la figura \ref{CDF}, se muestra una comparación de la función de distribución acumulada para todos los modelos sobre las 75 sub-cuencas de CHRC.
+En esta figura se puede ver claramente que el modelo que mejor funciona en general es el LSTM1 PCA. El modelo denso es el segundo mejor en algunos
+sectores y el que muestra la peor performance en toda la cuenca es el modelo que usa el espacio predictor sin hacer el análisis de componentes principales.
+
+\section{Predicción de los caudales naturales}
 
 
 \begin{figure}[h!]
@@ -147,7 +157,7 @@ ningún tipo de observación relacionada con nieve más allá de la precipitaci�
 
 En las figuras \ref{alcomp20} se muestran  los resultados obtenidos para los caudales en la sub-cuenca con id 20
 y los grados de ajustes correspondientes obtenidos con los diferentes modelos.
-Las curvas continuas son los valores simulados con el modelo LEM y las curvas a rayas son los valores predichos 
+Las curvas continuas son los valores simulados con el modelo MELCA y las curvas a rayas son los valores predichos 
 con los modelos denso, LSTM1 PCA y LSTM1 loc en el conjunto de test. En este caso la performance de los modelos
 LSTM1 PCA y denso es excelente, con valores de NSE iguales a 0.97 y 0.96, respectivamente, 
 mientras que el modelo entrenado localmente es un poco más baja. Como se ha explicado en sesiones anteriores, los
@@ -173,14 +183,14 @@ al predecir los valores en el conjunto de test, mientras que los modelos Denso y
  ($NSE>0.6$). En este caso, el modelo LSTM1 loc ha sido capaz de reflejar 
 cierta tendencia de los datos pero aún así la calidad del ajuste es baja ($NSE<0.5$). El modelo LSTM1 PCA, que 
 posee ambas ventajas, la de considerar componentes principales y redes recurrentes, es capaz de predecir los valores de los caudales
-en el conjunto de test con una calidad aceptable ($NSE=0.7$). 
+en el conjunto de test con una calidad buena ($NSE=0.7$). 
 
-
+ 
 \begin{figure}[h!]
 \begin{center}
   \includegraphics[height=2.8in]{Figures/seq/results_seq.png}
 
-  \caption{ Resultados del Modelo LSTM2, en el panel superior se muestran los valores de NSE a lo alrgo de toda la cuenca y En
+  \caption{ Resultados del Modelo LSTM2. En el panel superior se muestran los valores de NSE a lo largo de toda la cuenca y En
   el panel inferior, los valores predichos en la sub-cuenca con id 15. }
   \label{seq15}
 \end{center}
@@ -192,7 +202,7 @@ y en el panel inferior los resultados obtenidos para el mejor ajuste. Se puede o
 la performance del modelo es en general bastante pobre, sólo unos pocos puntos sobrepasan en umbral de calidad aceptable.
 Los mayores problemas que presenta esta aproximación es que por un lado los errores cometidos en cada una de las
 predicciones es propagado y acumulado a lo largo del tiempo y por otro lado se pierde completamente
-la información otorgada por las series hidro-climáticas de entrada por lo cual el modelo no es capaz de aprender ningún 
+la información otorgada por las series hidro-climáticas de entrada, por lo cual el modelo no es capaz de aprender ningún 
 patrón relacionado con la respuesta que las diferentes sub-cuencas tienen frente a las series de precipitación.  
 
 
@@ -265,23 +275,22 @@ patrón relacionado con la respuesta que las diferentes sub-cuencas tienen frent
 % %     \end{center}
 % %   \end{figure}
 
-\section{Resultados con Modzim}
+\section{Cálculo de balance hídrico con MODSIM}
 
 
 Con el fin de determinar si los resultados obtenidos con redes neuronales pueden ser utilizados para simular 
-operaciones en la cuenca Chambo, se ha determinado el balance hidrológico utilizando el software Modsim
-con los caudales simulados por el modelo hidrológico LEM y las predicciones de los modelos
-de redes neuronales en el conjunto de test. Este software optimiza la distribución del agua 
-en las redes del cauce teniendo en cuenta la complejidad  hidrológica de la cuenca e incluyendo los derechos del agua.
+operaciones en la cuenca CHRC, se ha determinado el balance hidrológico utilizando el software MODSIM (introducido en \ref{Modelo_balance})
+con los caudales simulados por el modelo hidrológico MELCA y las predicciones de los modelos
+de redes neuronales en el conjunto de test.
 
 En el panel superior de la figura \ref{modsim}  se muestra el residuo ($R$), es decir la diferencia entre los valores de los 
-caudales predichos respecto a los caudales de referencia (en este caso simulados con el modelo LEM), 
+caudales predichos respecto a los caudales de referencia (en este caso simulados con el modelo MELCA), 
 para diferentes sub-cuencas distribuidas a lo largo de toda la cuenca hidrográfica Chambo. 
-En los paneles inferiores se muestran los valores de los caudales  arrojados por Modsim  para la sub-cuenca que se encuentra
-a la salida de la cuenca hidrográfica (aguas abajo) y para una de las sub-cuencas que se encuentra a mayor altitud (aguas arriba). 
-Las curvas continuas corresponden al resultado obtenido con los caudales simulados con el modelo LEM, 
+En los paneles inferiores se muestran los valores de los caudales  arrojados por MODSIM  para la sub-cuenca que se encuentra
+a la salida de CHRC (aguas abajo) y para una de las sub-cuencas que se encuentra a mayor altitud (aguas arriba). 
+Las curvas continuas corresponden al resultado obtenido con los caudales simulados con el modelo MELCA, 
 y la curva a rayas es el resultado obtenido cuando consideramos los valores predichos por el modelo LSTM1 PCA. 
-Se puede apreciar que los resultados arrojados por Modsim son los mismos para ambos casos, es decir, 
+Se puede apreciar que los resultados arrojados por MODSIM son los mismos para ambos casos, es decir, 
 las pequeñas variaciones mostradas en el panel superior no influyen en el resultado final. 
 
 
@@ -290,7 +299,7 @@ las pequeñas variaciones mostradas en el panel superior no influyen en el resul
     \begin{center}
       \includegraphics[height=6.5in]{Figures/modzim/comp_modzim.png}
       \caption{ Paneles superiores: residuos obtenidos a lo largo de diferentes sub-cuencas. 
-      Paneles inferiores: resultados finales obtenidos utilizando el software de gestión de recursos Modsim, teniendo en cuenta los usos del agua}
+      Paneles inferiores: resultados finales obtenidos utilizando el software de gestión de recursos MODSIM, teniendo en cuenta los usos del agua.}
       \label{modsim}
     \end{center}
   \end{figure}

@@ -2,34 +2,37 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Series de precipitación para diferentes regiones de la cuenca Chambo. En los panel superior derechos se muestra la serie de precipitación correspondiente al año 2019 y los valores medios mensuales desde el año 2000 hasta el año 2020. En el panel inferior, se muestran las series de temperatura máxima y mínima diarias.\relax }}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Series de precipitación para diferentes regiones de la cuenca Chambo. En los paneles superiores se muestra la serie de precipitación correspondiente al año 2019 y los valores medios mensuales desde el año 2000 hasta el año 2020. En el panel inferior, se muestran las series de temperatura máxima y mínima diarias.\relax }}{7}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta el año 2020. \relax }}{8}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta el año 2020. \relax }}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta el año 2020. \relax }}{11}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema conceptual de CHRC\relax }}{13}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de una neurona artificial (figura tomada de \cite {gutierrez}). \relax }}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tres topologías distintas de red neuronal: (a) multicapa, (b) competitivas, (c) recurrentes. \relax }}{12}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Back propagation \relax }}{13}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Red neuronal recurrente con memoria a largo y corto plazo (LSTM). Figura tomada de \cite {olah}. \relax }}{14}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Modelo Denso.\relax }}{15}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Modelo LSTM1.\relax }}{15}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Modelo LSTM2.\relax }}{15}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Evolución de la función de loss considerando diferentes optimizadores.\relax }}{16}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces k-fold cross validation (imagen de Gufosowa - WikiMedia).\relax }}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de una neurona artificial (figura tomada de \cite {gutierrez}). \relax }}{14}{figure.caption.7}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tres topologías distintas de red neuronal: (a) multicapa, (b) competitivas, (c) recurrentes. \relax }}{15}{figure.caption.8}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Back propagation \relax }}{16}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Red neuronal recurrente con memoria a largo y corto plazo (LSTM). Figura tomada de \cite {olah}. \relax }}{17}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Recorrido por el funcionamiento de una celda LSTM. Figuras tomadas de \cite {olah}. \relax }}{18}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Modelo Denso.\relax }}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Modelo LSTM1.\relax }}{19}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Modelo LSTM2.\relax }}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Evolución de la función de loss considerando diferentes optimizadores.\relax }}{21}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces k-fold cross validation (imagen de Gufosowa - WikiMedia).\relax }}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Porcentaje de varianza explicada acumulada para las primeras 9 componentes principales.\relax }}{26}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Valores obtenidos para el coeficiente NSE a lo largo de toda la cuenca con los modelos denso y LSTM1 entrenado con PCAs.\relax }}{23}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Evolución de la función de loss en los conjuntos de entrenamiento y validación para los modelos denso y LSTM1 con PCAs.\relax }}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Evolución del coeficiente NSE en función del área (panel superior) y la variación de precipitación (panel inferior) para los modelos LSTM1 con y sin PCAs.\relax }}{24}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Evolución del coeficiente NSE en función del área (panel superior) y la variación de precipitación (panel inferior) para los modelos LSTM1 con PCAs y LSTM1 entrenado localmente.\relax }}{25}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Predicciones del caudal de descarga obtenidos con los modelos Denso, LSTM1 con PCAs y LSTM1 local en la subcuenca con id 20. En los paneles inferiores se muestran los grados de ajuste correspondientes.\relax }}{27}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Predicciones del caudal de descarga obtenidos con los modelos Denso, LSTM1 con PCAs y LSTM1 local en la subcuenca con id 67. En los paneles inferiores se muestran los grados de ajuste correspondientes.\relax }}{28}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Resultados del Modelo LSTM2, en el panel superior se muestran los valores de NSE a lo alrgo de toda la cuenca y En el panel inferior, los valores predichos en la sub-cuenca con id 15. \relax }}{29}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Paneles superiores: residuos obtenidos a lo largo de diferentes sub-cuencas. Paneles inferiores: resultados finales obtenidos utilizando el software de gestión de recursos Modsim, teniendo en cuenta los usos del agua\relax }}{30}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Valores obtenidos para el coeficiente NSE a lo largo de toda la cuenca con los modelos denso y LSTM1 entrenado con PCAs.\relax }}{28}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Evolución de la función de loss en los conjuntos de entrenamiento y validación para los modelos denso y LSTM1 con PCAs.\relax }}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Evolución del coeficiente NSE en función del área (panel superior) y la variación de precipitación (panel inferior) para los modelos LSTM1 con y sin PCAs.\relax }}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Evolución del coeficiente NSE en función del área (panel superior) y la variación de precipitación (panel inferior) para los modelos LSTM1 con PCAs y LSTM1 entrenado localmente.\relax }}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Función de distribución acumulada para todos los modelos de ANNs a lo largo de todas las sub-cuencas de CHRC.\relax }}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Predicciones del caudal de descarga obtenidos con los modelos Denso, LSTM1 con PCAs y LSTM1 local en la subcuenca con id 20. En los paneles inferiores se muestran los grados de ajuste correspondientes.\relax }}{32}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Predicciones del caudal de descarga obtenidos con los modelos Denso, LSTM1 con PCAs y LSTM1 local en la subcuenca con id 67. En los paneles inferiores se muestran los grados de ajuste correspondientes.\relax }}{34}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Resultados del Modelo LSTM2. En el panel superior se muestran los valores de NSE a lo largo de toda la cuenca y En el panel inferior, los valores predichos en la sub-cuenca con id 15. \relax }}{35}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Paneles superiores: residuos obtenidos a lo largo de diferentes sub-cuencas. Paneles inferiores: resultados finales obtenidos utilizando el software de gestión de recursos MODSIM, teniendo en cuenta los usos del agua.\relax }}{36}{figure.caption.30}%
 \addvspace {10\p@ }
-\babel@toc {spanish}{}
-\babel@toc {spanish}{}
-\babel@toc {spanish}{}
-\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Base de datos relacional con los descriptores de las componentes de una cuenca hidrográfica. \relax }}{41}{figure.caption.31}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Ejemplo de consulta de uno de los métodos de la API que contiene la base de datos. \relax }}{42}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Ejemplo de consulta del método que calcula el balance hídrico de la cuenca. \relax }}{43}{figure.caption.33}%
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}
 \babel@toc {spanish}{}

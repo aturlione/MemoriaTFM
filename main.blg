@@ -1,10 +1,6 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-Reallocating 'name_of_file' (item size: 1) to 13 items.
-A level-1 auxiliary file: 0-titulo.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: 1-agradecimientos.aux
 Reallocating 'name_of_file' (item size: 1) to 14 items.
 A level-1 auxiliary file: 2-resumen.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
@@ -19,62 +15,61 @@ Reallocating 'name_of_file' (item size: 1) to 17 items.
 A level-1 auxiliary file: 6_capitulo_2.aux
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 A level-1 auxiliary file: 7-conclusiones.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+A level-1 auxiliary file: Anexo.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: babunsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
 Warning--entry type for "Kratzert2" isn't style-file defined
---line 145 of file bibliografia.bib
+--line 134 of file bibliografia.bib
 Warning--entry type for "Rodriguez" isn't style-file defined
---line 214 of file bibliografia.bib
+--line 204 of file bibliografia.bib
 Warning--I didn't find a database entry for "modsim2"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Warning--empty language in gutierrez
 Warning--empty journal in gutierrez
-Warning--empty language in ERA5
 Warning--empty journal in modim3
-Warning--empty journal in scikit
 Warning--empty journal in Manu
-Warning--empty journal in NSE
-You've used 22 entries,
+You've used 31 entries,
             2465 wiz_defined-function locations,
-            714 strings with 9055 characters,
-and the built_in function-call counts, 5406 in all, are:
-= -- 341
-> -- 182
-< -- 0
-+ -- 72
-- -- 50
-* -- 642
-:= -- 664
-add.period$ -- 41
-call.type$ -- 22
-change.case$ -- 18
+            766 strings with 11584 characters,
+and the built_in function-call counts, 9977 in all, are:
+= -- 538
+> -- 458
+< -- 1
++ -- 167
+- -- 136
+* -- 1521
+:= -- 1191
+add.period$ -- 57
+call.type$ -- 31
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 323
-empty$ -- 696
-format.name$ -- 142
-if$ -- 1185
+cite$ -- 35
+duplicate$ -- 603
+empty$ -- 1143
+format.name$ -- 402
+if$ -- 2043
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 24
-newline$ -- 103
-num.names$ -- 18
-pop$ -- 146
+int.to.str$ -- 31
+missing$ -- 38
+newline$ -- 135
+num.names$ -- 25
+pop$ -- 182
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 154
+skip$ -- 219
 stack$ -- 0
-substring$ -- 139
-swap$ -- 135
-text.length$ -- 0
+substring$ -- 298
+swap$ -- 333
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 7
-while$ -- 24
-width$ -- 24
-write$ -- 202
-(There were 10 warnings)
+warning$ -- 4
+while$ -- 39
+width$ -- 33
+write$ -- 284
+(There were 7 warnings)
