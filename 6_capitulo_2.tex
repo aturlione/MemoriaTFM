@@ -2,7 +2,8 @@
 \label{capitulo 3}
 
 En este capítulo se muestran los resultados obtenidos al entrenar los modelos previamente descritos, 
-el objetivo es predecir los caudales de descarga naturales en cada una de las sub-cuencas que conforman CHRC para  un evento de precipitación dado. 
+el objetivo es predecir los caudales de descarga naturales en cada una de las sub-cuencas que conforman CHRC para  un evento de 
+precipitación dado. 
 La performance predictiva de los modelos es evaluada en el conjunto de test, 
 en la tabla \ref{hyperres} se muestran los hyper-parámetros utilizados para cada modelo obtenidos
 tras realizar la exploración descrita en \ref{cal}.
@@ -15,7 +16,7 @@ tras realizar la exploración descrita en \ref{cal}.
    Modelo&optimizador &Neuronas & Activación & alpha & reg \\
    \hline
    Denso & rmsprop& 200& relu & 0.0002 &l2, 0.0001  \\
-   LSTM1 PCA & rmsprop  &200 & linear & 0.0002  &  0.0001 \\
+   LSTM1 PCA & rmsprop  &200 & linear &  0.0002  & l2, 0.0001 \\
    LSTM1 loc & adam & 200 & relu & 0.0001 &  l1, 0.0001  \\
    LSTM2 & adam & 200 & relu &  0.001 & l2, 0.0000001 \\
   
@@ -43,7 +44,7 @@ tras realizar la exploración descrita en \ref{cal}.
 Como se ha mencionado en la sección \ref{sectNSE}, se ha utilizado el coeficiente de Nash-Sutcliffe para
 validar los modelos y hacer un análisis un poco más profundo sobre cómo es su performance en los diferentes puntos
 de la cuenca. En la figura \ref{NSE1} se muestran los valores obtenidos 
-de NSE para todas las subcuencas de Chambo considerando el modelo denso y el modelo LSTM1 entrenado de manera global 
+de NSE para todas las sub-cuencas de Chambo considerando el modelo denso y el modelo LSTM1 entrenado de manera global 
 en el espacio de las componentes principales. Las líneas horizontales muestran los umbrales correspondientes a 
 ajustes excelentes y aceptables. 
 
@@ -122,7 +123,7 @@ más pequeñas y áridas disminuye \cite{Kratzert}.
 
 Este efecto es también visible cuando entrenamos el modelo LSTM1 de manera local,
 como puede verse en la figura \ref{NSE3} en la mayoría de los casos, la performance del modelo global  es 
-mejor que la del modelo local. Este resultado se encuentra alineado con estudios anteriores 
+mejor que la del modelo local. Este resultado se encuentra alineado con estudios 
 que demuestran que los modelos LSTM entrenados en un gran número de sub-cuencas son capaces de vincular Las
 características de las mismas para aprender un modelo global que a su vez es capaz de reflejar  
 explícitamente las similitudes y diferencias de las cuencas a nivel local  \cite{Kratzert}. 
@@ -136,7 +137,7 @@ explícitamente las similitudes y diferencias de las cuencas a nivel local  \cit
   \end{center}
 \end{figure}
 
-En la figura \ref{CDF}, se muestra una comparación de la función de distribución acumulada para todos los modelos sobre las 75 sub-cuencas de CHRC.
+En la figura \ref{CDF}, se muestra una comparación de la función de distribución acumulada para todos los modelos sobre las 76 sub-cuencas de CHRC.
 En esta figura se puede ver claramente que el modelo que mejor funciona en general es el LSTM1 PCA. El modelo denso es el segundo mejor en algunos
 sectores y el que muestra la peor performance en toda la cuenca es el modelo que usa el espacio predictor sin hacer el análisis de componentes principales.
 

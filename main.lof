@@ -4,8 +4,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Series de precipitación para diferentes regiones de la cuenca Chambo. En los paneles superiores se muestra la serie de precipitación correspondiente al año 2019 y los valores medios mensuales desde el año 2000 hasta el año 2020. En el panel inferior, se muestran las series de temperatura máxima y mínima diarias.\relax }}{7}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta el año 2020. \relax }}{11}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema conceptual de CHRC\relax }}{13}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Caudales diarios simulados con el modelo MELCA para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta el año 2020. \relax }}{11}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Esquema conceptual de CHRC con MODSIM\relax }}{13}{figure.caption.6}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de una neurona artificial (figura tomada de \cite {gutierrez}). \relax }}{14}{figure.caption.7}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Tres topologías distintas de red neuronal: (a) multicapa, (b) competitivas, (c) recurrentes. \relax }}{15}{figure.caption.8}%

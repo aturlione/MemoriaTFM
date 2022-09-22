@@ -45,12 +45,12 @@ de ecuaciones:
 \end{equation}
 
 \begin{equation}
-    \frac{d \hat{P}}{dt}=\frac{P(t)-\hat{P}}{\lambda}
+    \frac{d \hat{P}}{dt}=P(t)-\frac{\hat{P}}{\lambda}
 \end{equation}
 
 
 \begin{equation}
-    \frac{d \hat{E}}{dt}=\frac{E(t)-\hat{E}}{\lambda}
+    \frac{d \hat{E}}{dt}=E(t)-\frac{\hat{E}}{\lambda}
 \end{equation}
 
 
@@ -60,7 +60,7 @@ de ecuaciones:
 
 
 \begin{equation}
-    \frac{d Q(t)}{dt}=\frac{1}{\tau}K\cdot \big[R(t)-Q(t)\big]
+    \frac{d Q(t)}{dt}=\frac{1}{\tau}\cdot \big[R(t)-Q(t)\big]
 \end{equation}
 
 
@@ -83,8 +83,8 @@ altas de la cuenca son escasos. Es por esto que es necesario aplicar  dos factor
 que tienen en cuenta la influencia de la altitud de cada subcuenca y
  sirven para calibrar el modelo y corregir las series de precipitaciones y evo-transpiración, respectivamente.
  Para calibrar el modelo se han utilizado datos de caudales recogidos por diferentes estaciones de aforo proporcionados por
- MAATE \cite{MAATE} y los valores de caudal promedio aportados por el documento de "\textit{Aportes a la planificación para 
- la gestión integral de los recursos hídricos}" citado en \cite{Rodriguez}. 
+ MAATE \cite{MAATE} y los valores de caudal promedio aportados por el documento de ``\textit{Aportes a la planificación para 
+ la gestión integral de los recursos hídricos}'' citado en \cite{Rodriguez}. 
  El modelo es entonces calibrado en cada sub-cuenca de manera individual, ajustando los factores de corrección $fcp$ y $fce$ 
  de modo tal que los caudales   mensuales medios  simulados se acerquen lo más posible a los valores medidos en las estaciones de aforo.
  
@@ -130,14 +130,14 @@ y la aportación de agua atmosférica proveniente de niebla (flujo que es signif
 \begin{figure}[h!]
     \begin{center}
       \includegraphics[height=3.5in]{Figures/caudales.png}
-      \caption{ Caudales diarios simulados con el modelo LEM para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta
+      \caption{ Caudales diarios simulados con el modelo MELCA para las cuencas con ids 8, 57 y 75 desde el año 2000 hasta
       el año 2020. }
       \label{caudales}
     \end{center}
   \end{figure}
 
 En la figura \ref{caudales} se muestran a modo de ejemplo los caudales de descarga diarios simulados con el modelo MELCA 
-para las cuencas con ids 8, 57 y 75. Se puede observar que la cuenca 75, que se encuentra más cerca del amazonas y posee 
+para las cuencas con ids 8, 57 y 75. Se puede observar que la cuenca 75, que se encuentra más cerca del amazonas y con 
 un régimen más húmedo, posee una caudal considerablemente mayor.
 % \subsection{Parámetros físicos}
 % El modelo LEM  usa 5 parámetros de entrada, el área de la cuenca, 
@@ -297,7 +297,7 @@ del agua. Además, brinda soporte para la toma de decisión en el uso del agua e
 \begin{figure}[h!]
     \begin{center}
       \includegraphics[height=8.5in]{Figures/modzim/figs.png}
-      \caption{ Esquema conceptual de CHRC}
+      \caption{ Esquema conceptual de CHRC con MODSIM}
       \label{caudales}
     \end{center}
   \end{figure}

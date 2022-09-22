@@ -1,6 +1,6 @@
 \chapter{Anexo}
 \label{Desarrollo}
-Con el fin de poder ejecutar los modelos ANNs desarrollados y calcular el balance hídrico de la cuenca, 
+Con el fin de poder ejecutar fácilmente los modelos de ANNs desarrollados y calcular el balance hídrico de la cuenca, 
 se han creado dos aplicaciones REST APIs utilizando la librería flask de python \cite{flask}. La idea 
 es que mediante la correcta estructuración de los datos de entrada necesarios para la ejecución de los modelos, estos se puedan ejecutar en diferentes 
 cuencas.
@@ -22,12 +22,12 @@ El proceso que se ha seguido para crear esta API es el siguientes:
    agregaciones, actualizaciones, y borrado de los datos. Para esto se utilizó la librería psycopg2, una de las librerías más populares que sirven para 
    integrar el lenguaje de PostgreSQL en python y permite crear métodos que hagan consultas en la base de datos creada con dicho software.
    \item El tercer paso es crear una API que contenga todos los métodos que faciliten el acceso a los datos, entre los métodos creados se destacan 
-   métodos que 
+   los que 
    permiten recorrer la navegación de la cuenca, encontrar para una cuenca dada,  las cuencas aguas arriba que vierten en ella,
     todas las demandas y aportaciones de agua, etc (Fig. \ref{BD}).
     \item Una vez creara la API que contiene los métodos que permiten la consulta de la base de datos y las series temporales, 
     se ha creado otra aplicación que ejecuta los modelos desarrollados (Fig. \ref{MELCA}). Para esto se ha creado una clase python, que posee varios métodos, 
-    que ejecutan los modelos, y calculan el balance hídrico de la cuenca. Para esto es necesario utilizar la librería
+    que ejecutan los modelos, y calculan el balance hídrico de la cuenca. En este proceso se ha utilizado la librería
     la librería request que permite hacer peticiones HTTP POST y GET a la base de datos que contiene las tablas con las series temporales y 
     los descriptores necesarios para la ejecución de los modelos.
     \item Por último, una vez que se ha accedido a todos los datos necesarios para ejecutar los modelos que simulan/predicen los caudales

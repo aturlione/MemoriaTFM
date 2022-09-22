@@ -12,7 +12,7 @@ tener una  mala performance en la mayoría de los puntos.
 Los resultados antes mencionados nos llevan a concluir que la inclusión de las celdas de memoria LSTM y la presencia de componentes principales 
 mejoran notablemente la performance de los modelos en cuencas hidrográficas. 
 Por un lado las celdas LSTM permiten almacenar información de eje temporal sobre los diferentes procesos  que ocurren en  las sub-cuencas,
-y así captar mas información sobre la relación entre eventos de precipitación y descarga. Por otro lado, 
+y así captar más información sobre la relación entre eventos de precipitación y descarga. Por otro lado, 
 las componentes principales reducen considerablemente la dimensión del espacio predictor
 y combinan la información proveniente de todo el dominio del mismo, lo que soluciona problemas de sobre ajustes y el problema
 des desvanecimiento del loss presente en las cuencas más pequeñas y áridas. 
@@ -20,12 +20,12 @@ Finalmente, una vez entrenados lo modelos, se ha demostrado que los resultados o
 pueden ser utilizados para simular operaciones en la cuenca CHRC, ya que se ha comprobado que
 el resultado del balance hidrológico obtenido con MODSIM es el mismo que los obtenidos con los valores simulados por el modelo LEM.
 
-Los resultados obtenidos a lo largo del trabajo apuntan en la misma línea que estudios recientes en los cuales se concluye que 
+Todos estos resultados apuntan en la misma línea que estudios recientes en los cuales se concluye que 
 las redes neuronales generalmente requieren una gran cantidad de datos de entrenamiento y que 
 los ajustes que se obtienen al entrenar modelos de aprendizaje profundo en una sola sub-cuenca no suelen ser fiables \cite{Kratzert}. 
-Esto supone una gran diferencia con el modelado y calibrado hidrológico tradicional que normalmente obtiene 
-los mejores resultados cuando los modelos se calibran de forma independiente para cada sub-cuenca.
-Esta propiedad de los modelos clásicos presenta problemas, ya que se ha observado que los 
+Esto supone una gran diferencia con el modelado y calibrado hidrológico tradicional que normalmente demuestra una mejor performance 
+cuando los modelos se calibran de forma independiente para cada sub-cuenca.
+Ésta propiedad de los modelos clásicos presenta problemas, ya que se ha observado que los 
  parámetros obtenidos por extrapolaciones  basadas en valores calibrados en cuencas de referencia 
 pueden dar lugar a espacios de parámetros poco realistas\cite{Mizukami}. 
 Los modelos LSTM en cambio, demuestran tener la capacidad de aprender simultáneamente relaciones de series temporales 
@@ -40,7 +40,7 @@ Es por esto que concluimos que la principal virtud de las redes neuronales no es
 aprendizaje y  flexibilidad para ser utilizadas en una variedad de  lugares y condiciones diferentes.
 
 
-Por último, como posibles mejores para trabajos futuros se propone concatenar los descriptores estáticos de las sub-cuencas, 
+Por último, como posibles mejoras para trabajos futuros se propone concatenar los descriptores estáticos de las sub-cuencas, 
 como por ejemplo el área, la longitud del cauce, etc., al espacio predictor. Otra mejora podría ser definir una función objetivo al 
 entrenar los modelos que no dependa del valor medio de los caudales de descarga de las diferentes cuencas. Kratzert etal. \cite{Kratzert} 
 proponen por ejemplo usar directamente una definición global del coeficiente de Nash-Stutcliffe durante el entrenamiento

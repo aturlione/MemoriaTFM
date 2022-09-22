@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.16)  15 SEP 2022 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.16)  22 SEP 2022 11:17
 entering extended mode
 **e:/MASTER_DATA/TFM/Memoria/main.tex
 (e:/MASTER_DATA/TFM/Memoria/main.tex
@@ -937,7 +937,7 @@ Cap\'{\i }tulo 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.74 
+l.65 
       [2
 
 
@@ -945,7 +945,7 @@ l.74
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 
+l.187 
        [3]) [4]
 \openout2 = `4-capitulo_1.aux'.
 
@@ -956,7 +956,7 @@ Cap\'{\i }tulo 2.
 
 
 ]
-<Figures/cuenca_con_subcuencas_prec.png, id=392, 2454.92157pt x 2805.7322pt>
+<Figures/cuenca_con_subcuencas_prec.png, id=391, 2454.92157pt x 2805.7322pt>
 File: Figures/cuenca_con_subcuencas_prec.png Graphic file (type png)
 <use Figures/cuenca_con_subcuencas_prec.png>
 Package pdftex.def Info: Figures/cuenca_con_subcuencas_prec.png  used on input line 152.
@@ -983,7 +983,7 @@ Cap\'{\i }tulo 3.
 
 
 ] [9]
-<Figures/caudales.png, id=430, 386.1627pt x 264.5082pt>
+<Figures/caudales.png, id=429, 386.1627pt x 264.5082pt>
 File: Figures/caudales.png Graphic file (type png)
 <use Figures/caudales.png>
 Package pdftex.def Info: Figures/caudales.png  used on input line 132.
@@ -996,7 +996,7 @@ Overfull \hbox (9.28603pt too wide) in paragraph at lines 132--134
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/modzim/figs.png, id=433, 1195.3458pt x 1839.9942pt>
+<Figures/modzim/figs.png, id=432, 1195.3458pt x 1839.9942pt>
 File: Figures/modzim/figs.png Graphic file (type png)
 <use Figures/modzim/figs.png>
 Package pdftex.def Info: Figures/modzim/figs.png  used on input line 299.
@@ -1021,7 +1021,7 @@ LaTeX Warning: Citation `modsim2' on page 11 undefined on input line 313.
 
  (e:/MASTER_DATA\TFM\Memoria\5-capitulo_4.tex
 Cap\'{\i }tulo 4.
-<Figures/esquema_red.PNG, id=463, 386.19281pt x 453.19313pt>
+<Figures/esquema_red.PNG, id=462, 386.19281pt x 453.19313pt>
 File: Figures/esquema_red.PNG Graphic file (type png)
 <use Figures/esquema_red.PNG>
 Package pdftex.def Info: Figures/esquema_red.PNG  used on input line 25.
@@ -1031,18 +1031,18 @@ Package pdftex.def Info: Figures/esquema_red.PNG  used on input line 25.
 
 
  <e:/MASTER_DATA/TFM/Memoria/Figures/esquema_red.PNG>]
-<Figures/topologias.PNG, id=473, 493.845pt x 430.60875pt>
+<Figures/topologias.PNG, id=472, 493.845pt x 430.60875pt>
 File: Figures/topologias.PNG Graphic file (type png)
 <use Figures/topologias.PNG>
 Package pdftex.def Info: Figures/topologias.PNG  used on input line 43.
 (pdftex.def)             Requested size: 207.21002pt x 180.67499pt.
  [15 <e:/MASTER_DATA/TFM/Memoria/Figures/topologias.PNG>]
-<Figures/back_prop.png, id=481, 1160.335pt x 487.8225pt>
+<Figures/back_prop.png, id=480, 1160.335pt x 487.8225pt>
 File: Figures/back_prop.png Graphic file (type png)
 <use Figures/back_prop.png>
 Package pdftex.def Info: Figures/back_prop.png  used on input line 78.
 (pdftex.def)             Requested size: 343.80081pt x 144.54pt.
-<Figures/LSTM3-chain.png, id=483, 806.89455pt x 303.17265pt>
+<Figures/LSTM3-chain.png, id=482, 806.89455pt x 303.17265pt>
 File: Figures/LSTM3-chain.png Graphic file (type png)
 <use Figures/LSTM3-chain.png>
 Package pdftex.def Info: Figures/LSTM3-chain.png  used on input line 105.
@@ -1052,7 +1052,7 @@ Package pdftex.def Info: Figures/LSTM3-chain.png  used on input line 105.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [16 <e:/MASTER_DATA/TFM/Memoria/Figures/back_prop.png (PNG copy)>]
-<Figures/LSTMs.png, id=497, 444.4605pt x 321.3606pt>
+<Figures/LSTMs.png, id=496, 444.4605pt x 321.3606pt>
 File: Figures/LSTMs.png Graphic file (type png)
 <use Figures/LSTMs.png>
 Package pdftex.def Info: Figures/LSTMs.png  used on input line 127.
@@ -1062,17 +1062,17 @@ Package pdftex.def Info: Figures/LSTMs.png  used on input line 127.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [17 <e:/MASTER_DATA/TFM/Memoria/Figures/LSTM3-chain.png>] [18 <e:/MASTER_DATA/TFM/Memoria/Figures/LSTMs.png>]
-<Figures/Red_densa.PNG, id=521, 489.32813pt x 260.47313pt>
+<Figures/Red_densa.PNG, id=520, 489.32813pt x 260.47313pt>
 File: Figures/Red_densa.PNG Graphic file (type png)
 <use Figures/Red_densa.PNG>
 Package pdftex.def Info: Figures/Red_densa.PNG  used on input line 196.
 (pdftex.def)             Requested size: 271.53552pt x 144.54pt.
-<Figures/Red_LSTM.PNG, id=522, 490.83376pt x 248.42813pt>
+<Figures/Red_LSTM.PNG, id=521, 490.83376pt x 248.42813pt>
 File: Figures/Red_LSTM.PNG Graphic file (type png)
 <use Figures/Red_LSTM.PNG>
 Package pdftex.def Info: Figures/Red_LSTM.PNG  used on input line 205.
 (pdftex.def)             Requested size: 285.57503pt x 144.54pt.
-<Figures/Red_LSTM2.PNG, id=523, 487.8225pt x 282.30469pt>
+<Figures/Red_LSTM2.PNG, id=522, 487.8225pt x 282.30469pt>
 File: Figures/Red_LSTM2.PNG Graphic file (type png)
 <use Figures/Red_LSTM2.PNG>
 Package pdftex.def Info: Figures/Red_LSTM2.PNG  used on input line 213.
@@ -1082,7 +1082,7 @@ Package pdftex.def Info: Figures/Red_LSTM2.PNG  used on input line 213.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [19 <e:/MASTER_DATA/TFM/Memoria/Figures/Red_densa.PNG> <e:/MASTER_DATA/TFM/Memoria/Figures/Red_LSTM.PNG>]
-<Figures/optims.png, id=534, 389.2944pt x 272.9397pt>
+<Figures/optims.png, id=533, 389.2944pt x 272.9397pt>
 File: Figures/optims.png Graphic file (type png)
 <use Figures/optims.png>
 Package pdftex.def Info: Figures/optims.png  used on input line 319.
@@ -1092,7 +1092,7 @@ Package pdftex.def Info: Figures/optims.png  used on input line 319.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [20 <e:/MASTER_DATA/TFM/Memoria/Figures/Red_LSTM2.PNG>]
-<Figures/GridsearchCV.png, id=549, 522.95375pt x 257.96375pt>
+<Figures/GridsearchCV.png, id=548, 522.95375pt x 257.96375pt>
 File: Figures/GridsearchCV.png Graphic file (type png)
 <use Figures/GridsearchCV.png>
 Package pdftex.def Info: Figures/GridsearchCV.png  used on input line 346.
@@ -1119,7 +1119,7 @@ Overfull \hbox (19.55136pt too wide) detected at line 436
 
 LaTeX Warning: Reference `PCA' on page 25 undefined on input line 529.
 
-<Figures/PCA.png, id=579, 393.8715pt x 278.9622pt>
+<Figures/PCA.png, id=578, 393.8715pt x 278.9622pt>
 File: Figures/PCA.png Graphic file (type png)
 <use Figures/PCA.png>
 Package pdftex.def Info: Figures/PCA.png  used on input line 534.
@@ -1137,17 +1137,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Cap\'{\i }tulo 5.
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 11.
+               Default added (so using `tbp') on input line 12.
 
 
-Overfull \hbox (23.34702pt too wide) in paragraph at lines 13--25
+Overfull \hbox (23.34702pt too wide) in paragraph at lines 14--26
  [] 
  []
 
-<Figures/NSE/NSEs_LSTM1s_PCA.png, id=600, 395.7987pt x 266.4354pt>
+<Figures/NSE/NSEs_LSTM1s_PCA.png, id=599, 395.7987pt x 266.4354pt>
 File: Figures/NSE/NSEs_LSTM1s_PCA.png Graphic file (type png)
 <use Figures/NSE/NSEs_LSTM1s_PCA.png>
-Package pdftex.def Info: Figures/NSE/NSEs_LSTM1s_PCA.png  used on input line 35.
+Package pdftex.def Info: Figures/NSE/NSEs_LSTM1s_PCA.png  used on input line 36.
 (pdftex.def)             Requested size: 322.09296pt x 216.81pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1157,75 +1157,75 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ]
-<Figures/loss/comp_loss.png, id=608, 384.2355pt x 278.9622pt>
+<Figures/loss/comp_loss.png, id=607, 384.2355pt x 278.9622pt>
 File: Figures/loss/comp_loss.png Graphic file (type png)
 <use Figures/loss/comp_loss.png>
-Package pdftex.def Info: Figures/loss/comp_loss.png  used on input line 63.
+Package pdftex.def Info: Figures/loss/comp_loss.png  used on input line 64.
 (pdftex.def)             Requested size: 298.63542pt x 216.81pt.
  [28 <e:/MASTER_DATA/TFM/Memoria/Figures/NSE/NSEs_LSTM1s_PCA.png> <e:/MASTER_DATA/TFM/Memoria/Figures/loss/comp_loss.png>]
-<Figures/NSE/comp_NSE_consinPCA.png, id=617, 397.2441pt x 276.7941pt>
+<Figures/NSE/comp_NSE_consinPCA.png, id=616, 397.2441pt x 276.7941pt>
 File: Figures/NSE/comp_NSE_consinPCA.png Graphic file (type png)
 <use Figures/NSE/comp_NSE_consinPCA.png>
-Package pdftex.def Info: Figures/NSE/comp_NSE_consinPCA.png  used on input line 85.
+Package pdftex.def Info: Figures/NSE/comp_NSE_consinPCA.png  used on input line 86.
 (pdftex.def)             Requested size: 363.03229pt x 252.94499pt.
 
-Overfull \hbox (3.03229pt too wide) in paragraph at lines 85--87
+Overfull \hbox (3.03229pt too wide) in paragraph at lines 86--88
  [] 
  []
 
 [29 <e:/MASTER_DATA/TFM/Memoria/Figures/NSE/comp_NSE_consinPCA.png>]
-<Figures/NSE/comp_NSE_consinPCA2.png, id=626, 398.4486pt x 278.4804pt>
+<Figures/NSE/comp_NSE_consinPCA2.png, id=625, 398.4486pt x 278.4804pt>
 File: Figures/NSE/comp_NSE_consinPCA2.png Graphic file (type png)
 <use Figures/NSE/comp_NSE_consinPCA2.png>
-Package pdftex.def Info: Figures/NSE/comp_NSE_consinPCA2.png  used on input line 109.
+Package pdftex.def Info: Figures/NSE/comp_NSE_consinPCA2.png  used on input line 110.
 (pdftex.def)             Requested size: 361.92609pt x 252.94499pt.
 
-Overfull \hbox (1.92609pt too wide) in paragraph at lines 109--111
+Overfull \hbox (1.92609pt too wide) in paragraph at lines 110--112
  [] 
  []
 
 [30 <e:/MASTER_DATA/TFM/Memoria/Figures/NSE/comp_NSE_consinPCA2.png>]
-<Figures/NSE/CDF.png, id=634, 387.6081pt x 263.7855pt>
+<Figures/NSE/CDF.png, id=633, 387.6081pt x 263.7855pt>
 File: Figures/NSE/CDF.png Graphic file (type png)
 <use Figures/NSE/CDF.png>
-Package pdftex.def Info: Figures/NSE/CDF.png  used on input line 133.
+Package pdftex.def Info: Figures/NSE/CDF.png  used on input line 134.
 (pdftex.def)             Requested size: 371.67961pt x 252.94499pt.
 
-Overfull \hbox (11.67961pt too wide) in paragraph at lines 133--134
+Overfull \hbox (11.67961pt too wide) in paragraph at lines 134--135
  [] 
  []
 
-<Figures/comp_grilla/resultados_sc20.png, id=636, 381.1038pt x 518.8986pt>
+<Figures/comp_grilla/resultados_sc20.png, id=635, 381.1038pt x 518.8986pt>
 File: Figures/comp_grilla/resultados_sc20.png Graphic file (type png)
 <use Figures/comp_grilla/resultados_sc20.png>
-Package pdftex.def Info: Figures/comp_grilla/resultados_sc20.png  used on input line 148.
+Package pdftex.def Info: Figures/comp_grilla/resultados_sc20.png  used on input line 149.
 (pdftex.def)             Requested size: 318.47931pt x 433.62pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [31 <e:/MASTER_DATA/TFM/Memoria/Figures/NSE/CDF.png>] [32 <e:/MASTER_DATA/TFM/Memoria/Figures/comp_grilla/resultados_sc20.png>]
-<Figures/comp_grilla/resultados_sc67.png, id=648, 381.1038pt x 518.8986pt>
+<Figures/comp_grilla/resultados_sc67.png, id=647, 381.1038pt x 518.8986pt>
 File: Figures/comp_grilla/resultados_sc67.png Graphic file (type png)
 <use Figures/comp_grilla/resultados_sc67.png>
-Package pdftex.def Info: Figures/comp_grilla/resultados_sc67.png  used on input line 173.
+Package pdftex.def Info: Figures/comp_grilla/resultados_sc67.png  used on input line 174.
 (pdftex.def)             Requested size: 318.47931pt x 433.62pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/seq/results_seq.png, id=650, 386.6445pt x 263.7855pt>
+<Figures/seq/results_seq.png, id=649, 386.6445pt x 263.7855pt>
 File: Figures/seq/results_seq.png Graphic file (type png)
 <use Figures/seq/results_seq.png>
-Package pdftex.def Info: Figures/seq/results_seq.png  used on input line 191.
+Package pdftex.def Info: Figures/seq/results_seq.png  used on input line 192.
 (pdftex.def)             Requested size: 296.60803pt x 202.35622pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [33] [34 <e:/MASTER_DATA/TFM/Memoria/Figures/comp_grilla/resultados_sc67.png>]
-<Figures/modzim/comp_modzim.png, id=664, 384.4764pt x 561.7788pt>
+<Figures/modzim/comp_modzim.png, id=663, 384.4764pt x 561.7788pt>
 File: Figures/modzim/comp_modzim.png Graphic file (type png)
 <use Figures/modzim/comp_modzim.png>
-Package pdftex.def Info: Figures/modzim/comp_modzim.png  used on input line 300.
+Package pdftex.def Info: Figures/modzim/comp_modzim.png  used on input line 301.
 (pdftex.def)             Requested size: 321.50891pt x 469.75499pt.
 
 
@@ -1250,7 +1250,7 @@ Cap\'{\i }tulo 7.
 
 
 ]
-<Figures/BD_diagram.png, id=700, 469.0323pt x 557.2017pt>
+<Figures/BD_diagram.png, id=699, 469.0323pt x 557.2017pt>
 File: Figures/BD_diagram.png Graphic file (type png)
 <use Figures/BD_diagram.png>
 Package pdftex.def Info: Figures/BD_diagram.png  used on input line 48.
@@ -1263,7 +1263,7 @@ Overfull \hbox (65.84673pt too wide) in paragraph at lines 48--49
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/potable water demands.PNG, id=701, 1056.94875pt x 798.73407pt>
+<Figures/potable water demands.PNG, id=700, 1056.94875pt x 798.73407pt>
 File: Figures/potable water demands.PNG Graphic file (type png)
 <use Figures/potable water demands.PNG>
 Package pdftex.def Info: Figures/potable water demands.PNG  used on input line 56.
@@ -1276,7 +1276,7 @@ Overfull \hbox (22.53336pt too wide) in paragraph at lines 56--57
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figures/consulta_MELCA.png, id=702, 1432.35126pt x 1607.00375pt>
+<Figures/consulta_MELCA.png, id=701, 1432.35126pt x 1607.00375pt>
 File: Figures/consulta_MELCA.png Graphic file (type png)
 <use Figures/consulta_MELCA.png>
 Package pdftex.def Info: Figures/consulta_MELCA.png  used on input line 66.
@@ -1591,17 +1591,17 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 28058 strings out of 480790
- 551971 string characters out of 2898239
- 870003 words of memory out of 3000000
- 43287 multiletter control sequences out of 15000+200000
+ 28055 strings out of 480790
+ 551917 string characters out of 2898239
+ 870014 words of memory out of 3000000
+ 43284 multiletter control sequences out of 15000+200000
  540574 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,20n,97p,534b,980s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Ana/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on e:/MASTER_DATA\TFM\Memoria\main.pdf (49 pages, 8884382 bytes).
+Output written on e:/MASTER_DATA\TFM\Memoria\main.pdf (49 pages, 8884137 bytes).
 PDF statistics:
- 846 PDF objects out of 1000 (max. 8388607)
+ 845 PDF objects out of 1000 (max. 8388607)
  174 named destinations out of 1000 (max. 500000)
  391 words of extra memory for PDF output out of 10000 (max. 10000000)
 

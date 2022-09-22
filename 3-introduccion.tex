@@ -31,17 +31,17 @@
 \section{Estado del arte}
 
 Un problema de larga data en la hidrología a gran escala es el hecho de que los modelos tradicionales, ya sean agregados o basados 
-en procesos físicos, en general no son extrapolables en el espacio, es decir un modelo calibrado en una cuenca dada no es 
+en procesos físicos, en general no son extrapolables en el espacio, es decir, un modelo calibrado en una cuenca dada no es 
 válido para otra. El desafío principal que deben sortear estos modelos es el de aprender a codificar las diferencias 
 en las características locales para poder extrapolar información hidrológica 
 de un región a otra, por ejemplo de cuencas calibradas a cuencas sin calibrar 
 \cite{Bloschl2} \cite{Razavi} \cite{Hrachowitz} \cite{Bloschl3}.   
 
 Una pregunta a responder es si realmente existe una teoría hidrológica válida a macro escalas que englobe la cantidad de 
-procesos heterogéneos que ocurren en una cuenca hidrográfica \cite{nearing}. Más aun, en el artículo textit{Twenty-three Unsolved Problems 
+procesos heterogéneos que ocurren en una cuenca hidrográfica \cite{nearing}. Más aun, en el artículo \textit{Twenty-three Unsolved Problems 
 in Hydrology (UPH)- a community perspective} 
 publicado en el año 2019 \cite{Bloschl} se ha incluido la pregunta de 
-\textit{"¿Cuáles son las leyes hidrológicas válidas en las  escalas de una cuenca hidrográfica?"} 
+``\textit{¿Cuáles son las leyes hidrológicas válidas en las  escalas de una cuenca hidrográfica?}''
 entre uno de los 23 problemas sin resolver en la hidrología. La respuesta a esta pregunta probablemente venga de la mano
 los avances de las técnicas de aprendizaje automático y aprendizaje profundo (ML y DP por sus siglas en inglés) que 
 indican que es posible derivar un modelo global a partir de los datos
@@ -62,6 +62,7 @@ Kratzert et al. \cite{Kratzert2} demostraron que las redes neuronales que incluy
 en una serie de cuencas para las cuales el modelo SAC-SMA había sido calibrado de manera individual.  
 El modelo LSTM fue capaz de realizar mejores predicciones del caudal en dichas cuencas siendo que este nunca antes había visto
 los datos de entrenamiento de estas cuencas. 
+
 Un estudio más reciente\cite{nearing}\cite{Kratzert}, en donde se han utilizado datos provenientes de varios cientos de cuencas 
 continentales en los Estados Unidos a lo largo de 30 años, demuestra que los modelos de aprendizaje profundo arrojan 
 mejores predicciones para los caudales de descarga en cuencas no aforadas que los obtenidos por modelos tradicionales 
@@ -170,8 +171,8 @@ son capaces de combinar diferentes partes de la red para predecir los caudales e
 En la primera parte del trabajo, el propósito fue generar simulaciones hidrológicas para los caudales naturales de las cuencas 
 que fueron utilizados como las variables objetivo para entrenar los modelos de ANNs. Con este fin se ha utilizado el modelo 
 desarrollado por IHCantabria, denominado MELCA (Modelo de Equilibrio Logístico para Cuencas Andinas) descrito en el capítulo \ref{Modelo_Hidrológico} 
-que constituye una adaptación del modelo general del denominado LEM (Modelo de Equilibrio Logístico) para cuencas 
-altas de montaña con presencia de páramos y bofedales. Las series meteorológicas utilizadas para simular los caudales con el modelo  hidrológico 
+que constituye una adaptación del modelo general denominado LEM (Modelo de Equilibrio Logístico) para cuencas 
+de alta montaña con presencia de páramos y bofedales. Las series meteorológicas utilizadas para simular los caudales con el modelo hidrológico 
 y entrenar los modelos de ANNs son descritas en el capítulo \ref{datos}. Estas abarcan un período temporal de 20 años e incluyen series de 
 precipitación, series de temperatura máxima y temperatura mínima.  
 
@@ -185,7 +186,7 @@ el modelo MELCA ejercen al determinar el balance hídrico en CHRC, se ha utiliza
 optimizar la distribución del agua sobre los cauces de la cuenca teniendo en cuenta los diferentes usos del agua.
 
 Por último, y con el objetivo de poder ejecutar los modelos desarrollados de manera sencilla en otras cuencas hidrográficas, se ha creado
-una aplicación REST APIs  utilizando la librería flask de python, los detalles del proceso de desarrollo se describen en el anexo \ref{Desarrollo}.
+una aplicación REST APIs  utilizando la librería flask de python. Los detalles del proceso de desarrollo se describen en el anexo \ref{Desarrollo}.
 
 
 

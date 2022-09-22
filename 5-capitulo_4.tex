@@ -17,8 +17,8 @@ químicas y eléctricas. En líneas generales, las neuronas se especializan en l
 de impulsos entre ellas mediante conexiones llamadas sinapsis. Cuando una neurona recibe un impulso 
 eléctrico que la activa, esta dispara un impulso que a su vez estimula a otras neuronas a las que está conectada. 
 Algunas de estas neuronas a su vez se activan y se disparan activando a otras y así sucesivamente 
-propagando los estímulos por toda la red. Entre más se practique una tarea, las conexiones que se generan entre las 
-neuronas se hacen más robustas, esto es el proceso de aprendizaje. 
+propagando los estímulos por toda la red. Entre más se practique una tarea, las conexiones se hacen más robustas, 
+esto es el proceso de aprendizaje. 
 
 \begin{figure}[h!]
     \begin{center}
@@ -47,8 +47,8 @@ a realizar una tarea dada generando diferentes conexiones entre ellas.
   \end{figure}
 
 La estructura de la red puede tener distintas topologías, en la figura \ref{topologias} se muestran tres modelos de red neuronales 
-distintos: \textit{re multicapa} que solo tiene conexiones entre neuronas de capas consecutivas, 
-\textit{red competitiva} que también posee conexiones entre de la última capa y \textit{redes recurrentes} (RNN) que posee conexiones entre 
+distintos: \textit{red multicapa} que solo tiene conexiones entre neuronas de capas consecutivas, 
+\textit{red competitiva} que también posee conexiones entre las neuronas de la última capa y \textit{redes recurrentes} (RNN) que poseen conexiones entre 
 capas no consecutivas. En este trabajo se han utilizado tanto redes multicapa como redes recurrentes, que son apropiadas para problemas de 
 aprendizaje supervisado en donde cada patron de entrenamiento (entrada de la red) $X_p=(x_{1p},...x_{mp})$ tiene asociado un 
 correspondiente patrón de salida $Y_p=(y_{1p},...y_{np})$. 
@@ -108,10 +108,10 @@ los pesos de la capa de salida, y éstos se propagan hacia atrás para actualiza
   \end{center}
 \end{figure}
 
-Las ANNs recurrentes con memoria a largo plazo (LSTM) son redes que poseen conexiones entre capas 
+Las RNNs con memoria a largo plazo (LSTM) son redes que poseen conexiones entre capas 
 no consecutivas (Fig. \ref{topologias}-c) que además incluyen una conexión extra entre las neuronas dedicadas
  a almacenar información para largo períodos de tiempo. 
- Esta "memoria a largo plazo" soluciona el problema del desvanecimiento del gradiente que presentan las redes recurrentes 
+ Esta ``memoria a largo'' plazo soluciona el problema del desvanecimiento del gradiente que presentan las redes recurrentes 
  tradicionales\cite{Kratzert}, \cite{olah}.
 
 En la figura \ref{LSTM} se puede observar la estructura de una celda de una red LSTM, donde $x_t$ es un input 
@@ -138,7 +138,7 @@ que parte de la información será descartada. Esta decisión se realiza por una
   f_t = \sigma(W_f\cdot[h_{t-1},x_t]+b_f)
 \end{equation}
 
-Esta puerta recibe el input actual $x_t$ y la salida del tiempo anterior $h_{t-1}$ y arroja un valor entre 0 y 1, 0 significa
+Esta puerta recibe el input actual $x_t$ y la salida del tiempo anterior $h_{t-1}$ y arroja un valor entre 0 y 1, donde 0 significa
  `` olvidar esto completamente''  y 1 significa ``mantener esto completamente''. 
 
  El siguiente paso  (paneles 2 y 3)  se encarga de actualizar el estado de la celda del valor 
@@ -271,11 +271,11 @@ Se han considerado dos tipos de regularizaciones, L1 y L2 que penalizan el loss 
 los siguientes términos para cada caso:
 
 \begin{equation}
-    loss + \lambda \sum |\omega_i| ~~(L1)
+    loss + \lambda \sum |\omega_ij| ~~(L1)
 \end{equation}
 
 \begin{equation}
-    loss + \lambda \sum \omega^2_i ~~(L2)
+    loss + \lambda \sum \omega^2_ij ~~(L2)
 \end{equation}
 
 La función de estos términos extra es la de reducir el valor de los parámetros haciendo incluso que la influencia de 
@@ -512,7 +512,7 @@ en la matriz $Y_{loc,id}$. En este enfoque, la red utiliza los valores de los ca
 \section{Análisis de componentes principales}
 
 El espacio de variables predictoras del conjunto de entrenamiento 
-que contiene la información de las 76 subcuencas posee una dimensión (160,228).
+que contiene la información de las 76 subcuencas posee una dimensión: (160,228).
 Sin embargo, existen correlaciones entre las variables que 
 provocan que muchas de estas aporten información poco relevante o redundante \cite{Manu}. 
 Estas correlaciones pueden distorsionar el proceso de aprendizaje de los modelos \cite{gutierrez} 
